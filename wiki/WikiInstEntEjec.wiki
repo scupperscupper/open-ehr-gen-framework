@@ -13,7 +13,7 @@ Antes de poder ejecutar el *open-ehr-gen-framework* debemos instalar:
     * Grails 1.1.1
     * Un gestor de base de datos (tomaremos como referencia MySQL).
 
----- 
+----
 
 ==Plataforma Windows==
 
