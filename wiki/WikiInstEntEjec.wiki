@@ -6,10 +6,10 @@ Aquí detallamos el software base que necesario para poder ejecutar el Framework
 == Introducción ==
 
 Antes de poder ejecutar el *open-ehr-gen-framework* debemos instalar:
-    -Java 1.6 (o superior)
-    -Groovy 1.7.5
-    -Grails 1.1.1
-    -Un gestor de base de datos (tomaremos como referencia MySQL).
+    * Java 1.6 (o superior)
+    * Groovy 1.7.5
+    * Grails 1.1.1
+    * Un gestor de base de datos (tomaremos como referencia MySQL).
 
 
 == Detalles ==
