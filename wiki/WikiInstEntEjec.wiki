@@ -41,7 +41,13 @@ _sudo dpkg -i groovy_1.7.5-1_all.deb_
 
 Luego de esto, el sistema nos pedirá que ingresemos el password del usuario Administrador del equipo. Lo ingresamos y comenzara la instalación.
 
-ACLARACION: sudo es un comando que se utiliza en el sistema operativo Ubuntu para realizar tareas criticas como la instalación de aplicaciones, puede que en otra distribución de Linux no sea necesario incluirlo. 
+Para cerciorarnos de que quedo correctamente instalado, ejecutamos en la consola el comando:
+
+_goovyConsole_
+
+Al ejecutar este comando se debería abrir la Consola de Groovy.
+
+*ACLARACION*: sudo es un comando que se utiliza en el sistema operativo Ubuntu para realizar tareas criticas como la instalación de aplicaciones, puede que en otra distribución de Linux no sea necesario incluirlo. 
 
 ===_Grails 1.1.1_===
 
