@@ -3,7 +3,7 @@
 
 Aquí detallamos el software base que necesario para poder ejecutar el Framework y como instalar cada uno de estos tanto en la plataforma Windows como en GNU/Linux (Distribución Ubuntu 10.10). 
 
-= Introducción =
+== Introducción ==
 
 Antes de poder ejecutar el *open-ehr-gen-framework* debemos instalar:
     -Java 1.6 (o superior)
@@ -12,23 +12,23 @@ Antes de poder ejecutar el *open-ehr-gen-framework* debemos instalar:
     -Un gestor de base de datos (tomaremos como referencia MySQL).
 
 
-= Detalles =
+== Detalles ==
 
-*Plataforma Windows*
+===Plataforma Windows===
 
-_Java 1.6_
+====_Java 1.6_====
 
-_Groovy 1.7.5_
+====_Groovy 1.7.5_====
 
-_Grails 1.1.1_
+====_Grails 1.1.1_====
 
-_MySQL_
+====_MySQL_====
 
-*Plataforma Linux*
+===*Plataforma Linux*===
 
-_Java 1.6_
+====_Java 1.6_====
 
-_Groovy 1.7.5_
+====_Groovy 1.7.5_====
 
 Descargamos del sitio oficial de Groovy(http://groovy.codehaus.org/Download) el paquete .deb de la versión 1.7.5 ("Download unofficial Debian installer"). 
 
@@ -40,6 +40,6 @@ Luego de esto, el sistema nos pedirá que ingresemos el password del usuario Adm
 
 ACLARACION: sudo es un comando que se utiliza en el sistema operativo Ubuntu para realizar tareas criticas como la instalación de aplicaciones, puede que en otra distribución de Linux no sea necesario incluirlo. 
 
-_Grails 1.1.1_
+====_Grails 1.1.1_====
 
-_MySQL_
+====_MySQL_====
