@@ -33,7 +33,7 @@ Antes de poder ejecutar el *open-ehr-gen-framework* debemos instalar:
 
 ===_Groovy 1.7.5_===
 
-Descargamos del sitio oficial de Groovy(http://groovy.codehaus.org/Download) el paquete .deb de la versión 1.7.5 ("Download unofficial Debian installer"). 
+Descargamos del sitio oficial de [http://groovy.codehaus.org/Download Groovy] el paquete .deb de la versión 1.7.5 ("Download unofficial Debian installer"). 
 
 Una vez descargado, abrimos una terminal (o consola) y nos dirigimos al directorio en donde se encuentra el archivo *groovy_1.7.5-1_all.deb* recién descargado. Posteriormente ejecutamos el siguiente comando para instalar groovy:
 
