@@ -3,6 +3,8 @@
 
 Aquí detallamos el software base que necesario para poder ejecutar el Framework y como instalar cada uno de estos tanto en la plataforma Windows como en GNU/Linux (Distribución Ubuntu 10.10). 
 
+---- 
+
 == Introducción ==
 
 Antes de poder ejecutar el *open-ehr-gen-framework* debemos instalar:
@@ -10,6 +12,8 @@ Antes de poder ejecutar el *open-ehr-gen-framework* debemos instalar:
     * Groovy 1.7.5
     * Grails 1.1.1
     * Un gestor de base de datos (tomaremos como referencia MySQL).
+
+---- 
 
 ==Plataforma Windows==
 
@@ -20,6 +24,8 @@ Antes de poder ejecutar el *open-ehr-gen-framework* debemos instalar:
 ===_Grails 1.1.1_===
 
 ===_MySQL_===
+
+---- 
 
 ==*Plataforma Linux*==
 
