@@ -11,24 +11,21 @@ Antes de poder ejecutar el *open-ehr-gen-framework* debemos instalar:
     * Grails 1.1.1
     * Un gestor de base de datos (tomaremos como referencia MySQL).
 
+==Plataforma Windows==
 
-== Detalles ==
+===_Java 1.6_===
 
-===Plataforma Windows===
+===_Groovy 1.7.5_===
 
-====_Java 1.6_====
+===_Grails 1.1.1_===
 
-====_Groovy 1.7.5_====
+===_MySQL_===
 
-====_Grails 1.1.1_====
+==*Plataforma Linux*==
 
-====_MySQL_====
+===_Java 1.6_===
 
-===*Plataforma Linux*===
-
-====_Java 1.6_====
-
-====_Groovy 1.7.5_====
+===_Groovy 1.7.5_===
 
 Descargamos del sitio oficial de Groovy(http://groovy.codehaus.org/Download) el paquete .deb de la versión 1.7.5 ("Download unofficial Debian installer"). 
 
@@ -40,6 +37,6 @@ Luego de esto, el sistema nos pedirá que ingresemos el password del usuario Adm
 
 ACLARACION: sudo es un comando que se utiliza en el sistema operativo Ubuntu para realizar tareas criticas como la instalación de aplicaciones, puede que en otra distribución de Linux no sea necesario incluirlo. 
 
-====_Grails 1.1.1_====
+===_Grails 1.1.1_===
 
-====_MySQL_====
+===_MySQL_===
