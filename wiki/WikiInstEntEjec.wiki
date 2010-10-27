@@ -47,7 +47,7 @@ _goovyConsole_
 
 Al ejecutar este comando se debería abrir la Consola de Groovy.
 
-*ACLARACION*: sudo es un comando que se utiliza en el sistema operativo Ubuntu para realizar tareas criticas como la instalación de aplicaciones, puede que en otra distribución de Linux no sea necesario incluirlo. 
+*ACLARACION*: _sudo_ es un comando que se utiliza en el sistema operativo Ubuntu para realizar tareas criticas como la instalación de aplicaciones, puede que en otra distribución de Linux no sea necesario incluirlo. 
 
 ===_Grails 1.1.1_===
 
