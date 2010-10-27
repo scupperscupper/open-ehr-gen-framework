@@ -3,7 +3,7 @@
 
 Aquí detallamos el software base que necesario para poder ejecutar el Framework y como instalar cada uno de estos tanto en la plataforma Windows como en GNU/Linux (Distribución Ubuntu 10.10). 
 
----- 
+----
 
 == Introducción ==
 
@@ -25,7 +25,7 @@ Antes de poder ejecutar el *open-ehr-gen-framework* debemos instalar:
 
 ===_MySQL_===
 
----- 
+----
 
 ==*Plataforma Linux*==
 
