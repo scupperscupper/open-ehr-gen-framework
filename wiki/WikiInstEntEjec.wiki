@@ -1,4 +1,4 @@
-#labels Phase-Deploy
+#labels Phase-Deploy,Featured
 = Instalación del Entorno de Ejecución =
 
 Aquí detallamos el software base que necesario para poder ejecutar el Framework y como instalar cada uno de estos tanto en la plataforma Windows como en GNU/Linux (Distribución Ubuntu 10.10). 
@@ -9,7 +9,6 @@ Aquí detallamos el software base que necesario para poder ejecutar el Framework
 
 Antes de poder ejecutar el *open-ehr-gen-framework* debemos instalar:
     * Java 1.6 (o superior)
-    * Groovy 1.7.5
     * Grails 1.1.1
     * Un gestor de base de datos (tomaremos como referencia MySQL).
 
@@ -19,11 +18,14 @@ Antes de poder ejecutar el *open-ehr-gen-framework* debemos instalar:
 
 ===_Java 1.6_===
 
-===_Groovy 1.7.5_===
-
 ===_Grails 1.1.1_===
 
+Descarga: http://www.grails.org/download/archive/Grails
+Instalación: http://www.grails.org/Installation
+
 ===_MySQL_===
+
+Descarga: http://www.mysql.com/downloads/
 
 ----
 
@@ -47,8 +49,13 @@ _goovyConsole_
 
 Al ejecutar este comando se debería abrir la Consola de Groovy.
 
-*ACLARACION*: _sudo_ es un comando que se utiliza en el sistema operativo Ubuntu para realizar tareas criticas como la instalación de aplicaciones, puede que en otra distribución de Linux no sea necesario incluirlo. 
+*ACLARACION*: _sudo_ es un comando que se utiliza en el sistema operativo Ubuntu para realizar tareas que requieran permisos de adminsitración, como la instalación de aplicaciones, puede que en otra distribución de Linux no sea necesario incluirlo. 
 
 ===_Grails 1.1.1_===
 
+Descarga: http://www.grails.org/download/archive/Grails
+Instalación: http://www.grails.org/Installation
+
 ===_MySQL_===
+
+Descarga: http://www.mysql.com/downloads/
