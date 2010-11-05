@@ -18,9 +18,12 @@ Antes de poder ejecutar el *open-ehr-gen-framework* debemos instalar:
 
 ===_Java 1.6_===
 
+Descarga: http://www.java.com/es/download/
+
 ===_Grails 1.1.1_===
 
 Descarga: http://www.grails.org/download/archive/Grails
+
 Instalación: http://www.grails.org/Installation
 
 ===_MySQL_===
