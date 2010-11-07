@@ -1,4 +1,4 @@
-#labels Phase-Deploy,Featured
+#labels Phase-Deploy
 = Instalación del Entorno de Ejecución =
 
 Aquí detallamos el software base que necesario para poder ejecutar el Framework y como instalar cada uno de estos tanto en la plataforma Windows como en GNU/Linux (Distribución Ubuntu 10.10). 
