@@ -1,0 +1,66 @@
+#labels Featured,Phase-Deploy
+#Proceso paso a paso para la instalación del framework
+
+=Introduction=
+
+En esta página se intentara especificar todos los pasos necesarios para instalar y correr el framework.
+
+
+=Requisitos=
+
+Antes de instalar el framework debemos tener:
+  * Java SDK 6 (JDK6): [http://www.oracle.com/technetwork/java/javase/index-137561.html instalación]
+  * Grails Framework 1.1.1: [http://www.grails.org/download/archive/Grails descarga] [http://www.grails.org/Installation instalacion]
+    * La versión de Grails DEBE ser la 1.1.1.
+  * Cliente SVN
+    * Tortoise: http://tortoisesvn.tigris.org/
+    * SVN desde Eclipse (plugin subclipse): http://subclipse.tigris.org/
+  * MySQL (no es obligatorio tenerlo): [http://www.mysql.com/downloads/mysql/ descarga]
+    * Los datos de conexión a la base se configuran en /open-ehr-gen/grails-app/config/Datasource.groovy
+
+
+==Auxiliares==
+  * Sobre variables de entorno en Windows: http://vlaurie.com/computers2/Articles/environment.htm
+  * Sobre variables de entorno en Linux: [https://help.ubuntu.com/community/EnvironmentVariables UBUNTU] [http://www.slackbook.org/html/shell-bash.html#SHELL-BASH-ENVIRONMENT Slackware] [http://www.centos.org/docs/4/4.5/System_Administration_Guide/Default_Settings-Environment_Variables.html CentOS]
+  * Sobre variables de entorno en MaxOS: http://dhptech.com/article/2007/02/09/setting-environment-variables-for-mac-osx-programs
+
+
+=Instalacion=
+  * Descargar el código del framework usando el cliente SVN apuntando a: http://open-ehr-gen-framework.googlecode.com/svn/trunk/
+  * Desde la línea de comandos, ir al directorio donde se descargó el framework, y correrlo con Grails: "grails run-app"
+
+
+=Configuración de la base de datos=
+
+  * La conexión a la base de datos se configura en el archivo: /open-ehr-gen/grails-app/config/Datasource.groovy
+  * Grails tiene 3 modos de funcionamiento: development, testing y production.
+  * Grails define en Datasource.groovy una conexión por cada modo de funcionamiento.
+  * Si no se aclara lo contrario, siempre estaremos usando el modo "development" o "dev".
+
+La configuración de la base tiene este aspecto:
+
+{{{
+environments {
+  development {
+    dataSource {
+
+      /* DB en MEMORIA
+      dbCreate = "create-drop" // one of 'create', 'create-drop','update'
+      url = "jdbc:hsqldb:mem:devDB"
+      */
+
+      // DB MySQL		
+      pooling = true
+      driverClassName = "com.mysql.jdbc.Driver"
+      url = "jdbc:mysql://localhost:3306/oehr_dev?useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8"
+      dbCreate = "create-drop"
+      username = "root"
+      password = "" 
+    }
+  }
+  ...
+}}}
+
+Si se descomentan las líneas correspondientes a "DB en Memoria" y se comentan las correspondientes a "DB MySQL", no será necesario tener MySQL instalado, y Grails usará la base de datos en memoria que ya tiene incorporada.
+
+_*Nota*: por defecto en modo "dev", cada vez que se baje y levante la aplicación, la base de datos será destruida y creada de nuevo._
