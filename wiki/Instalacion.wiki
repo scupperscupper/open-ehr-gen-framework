@@ -65,4 +65,4 @@ Si se descomentan las líneas correspondientes a "DB en Memoria" y se comentan l
 
 _*Nota*: por defecto en modo "dev", cada vez que se baje y levante la aplicación, la base de datos será destruida y creada de nuevo._
 
-_*Nota*: si se usa MySQL, se debe crear la base de datos antes de correr la aplicación con "grails run-app"._
+_*Nota*: si se usa MySQL, se debe crear la base de datos antes de correr la aplicación con "grails run-app". Notar que en el archivo de configuración que viene en el paquete descargado, el nombre de la base es _oehr_dev_.
