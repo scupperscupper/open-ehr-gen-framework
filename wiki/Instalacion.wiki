@@ -1,4 +1,4 @@
-#labels Featured,Phase-Deploy
+#labels Featured,Phase-Deploy,instalacion
 #Proceso paso a paso para la instalación del framework
 
 =Introduction=
@@ -64,3 +64,5 @@ environments {
 Si se descomentan las líneas correspondientes a "DB en Memoria" y se comentan las correspondientes a "DB MySQL", no será necesario tener MySQL instalado, y Grails usará la base de datos en memoria que ya tiene incorporada.
 
 _*Nota*: por defecto en modo "dev", cada vez que se baje y levante la aplicación, la base de datos será destruida y creada de nuevo._
+
+_*Nota*: si se usa MySQL, se debe crear la base de datos antes de correr la aplicación con "grails run-app"._
