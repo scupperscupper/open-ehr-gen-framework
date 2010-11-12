@@ -1,6 +1,8 @@
 #labels Featured,Phase-Deploy,instalacion
 #Proceso paso a paso para la instalación del framework
 
+<wiki:toc max_depth="2" />
+
 =Introduction=
 
 En esta página se intentara especificar todos los pasos necesarios para instalar y correr el framework.
