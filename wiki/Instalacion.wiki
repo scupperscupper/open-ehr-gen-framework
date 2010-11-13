@@ -1,5 +1,5 @@
+#summary Proceso paso a paso para la instalación del framework
 #labels Featured,Phase-Deploy,instalacion
-#Proceso paso a paso para la instalación del framework
 
 <wiki:toc max_depth="2" />
 
