@@ -1,0 +1,27 @@
+#summary Ideas sobre la API de plugins
+#labels Featured,Phase-Requirements,plugins
+
+= Introducción =
+
+Los sistemas de Historia Clínica Electrónica son sistemas complejos, formados por múltiples componentes, subsistemas, funcionalidades, tecnologías y estándares.
+
+El objetivo de esta página es agrupar las ideas que surjan sobre la integración de distintos componentes de una forma organizada, independiente (bajo acoplamiento), y que agregue valor al sistema resultando (alta cohesión).
+
+
+= Detalles =
+
+API para conexión de plugins:
+  * Es necesario definir algún tipo de interfaz en el core del framework para que los plugins se puedan comunicar con el framework.
+  * Cada plugin debe a su vez cumplir con una interfaz definida, para que el core del framework pueda también enviarle información al plugin.
+
+= Tipos de plugins =
+
+  * Servicios
+    * Provee de comunicación con sistemas externos.
+    * Agrega interfaces para que otros sistemas accedan a la HCE implementada con el framework.
+  * Funcionalidad
+    * ...
+  * GUI
+    * ...
+  * Datos
+    * Integración de fuentes de datos externas
