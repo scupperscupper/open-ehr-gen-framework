@@ -16,3 +16,8 @@ Si bien la especificación del Modelo de Servicios (SM) de OpenEHR está en esta
 
   * http://www.openehr.org/wiki/display/spec/openEHR+Service+Model
   * http://www.openehr.org/wiki/display/spec/vEHR+Service+Specification
+
+
+= Ideas =
+
+La implementación de esta interfaz puede estar basada y/o ayudar a perfilar los sistemas de HCE basados en OpenEHR según IHE XDS, PIX y PDQ (lo que permitiría una integración más simple con sistemas basados en mensajería HL7).
