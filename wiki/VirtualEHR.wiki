@@ -1,5 +1,5 @@
 #summary implementación de la interfaz de Virtual EHR
-#labels openehr,sm,api,virtualehr,todo,Phase-Requirements
+#labels openehr,sm,api,virtualehr,todo,Phase-Requirements,Featured
 
 = Introducción =
 
