@@ -1,5 +1,5 @@
+#summary Preguntas frecuentes
 #labels Featured,FAQ,Phase-Support
-#Preguntas frecuentes
 
 =Aquí iremos colocando las preguntas frecuentes con sus respuestas=
 
