@@ -1,0 +1,18 @@
+#labels openehr,sm,api,virtualehr,todo,Phase-Requirements
+#implementación de la interfaz de Virtual EHR
+
+= Introducción =
+
+Esta interfaz permitirá ver a distintos sistemas de Historia Clínica Electrónica como un solo sistema integrado, tanto desde el punto de vista de los médicos como de los pacientes, y ofrecerá servicios a todos los actores del sistema de salud.
+
+Contando con una interfaz de este tipo, sobre los sistemas basados en OpenEHR, podremos cruzar y consolidar información de distintos sistemas, de una forma "Orientada a Servicios", es decir, sin conocer previamente los detalles de la implementación de cada subsistema.
+
+Esta es la única forma de conseguir una Historia Clínica Electrónica Única para cada paciente, sin considerar la alternativa de que todos los agentes en el sistema de salud utilicen el mismo sistema monolítico (improbable).
+
+
+= Detalles =
+
+Si bien la especificación del Modelo de Servicios (SM) de OpenEHR está en estado "draft", existen implementaciones que sirven como referencia.
+
+  * http://www.openehr.org/wiki/display/spec/openEHR+Service+Model
+  * http://www.openehr.org/wiki/display/spec/vEHR+Service+Specification
