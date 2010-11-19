@@ -21,3 +21,21 @@ Si bien la especificación del Modelo de Servicios (SM) de OpenEHR está en esta
 = Ideas =
 
 La implementación de esta interfaz puede estar basada y/o ayudar a perfilar los sistemas de HCE basados en OpenEHR según IHE XDS, PIX y PDQ (lo que permitiría una integración más simple con sistemas basados en mensajería HL7).
+
+== API ==
+
+// Interfaz para realizar busquedas en un EHR
+Locatable query( EHRCriteria criteria, EHRResult result )
+
+// Indica los filtros que deben pasar los elementos a buscar
+EHRCriteria {
+  List patients
+  List responsibles
+  Interval<DateTime> fromTo
+}
+
+// Indica que respuesta se quiere
+EHRResult {
+  List include // Dice que tipos del RM incluye (p.e. COMPOSITION, OBSERVATION, ... podrian ser conceptos concretos como ids de arquetipos)
+  List exclude // Dice que tipos del RM excluye
+}
