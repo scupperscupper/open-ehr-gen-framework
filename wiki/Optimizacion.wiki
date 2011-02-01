@@ -9,15 +9,45 @@ El modelo de información de openEHR es esencialmente jerárquico con una estruc
 
 La idea para optimizar este modelo es aplanarlo, conservando la estructura de árbol codificada (de forma que pueda ser construido un árbol real en cualquier momento a partir de datos planos. Para codificar la estructura de árbol se podrían usar las paths de los arquetipos openEHR que se deben guardar en el modelo de información, así teniendo el identificador del arquetipo y una path, se sabrá exactamente que lugar en el árbol ocupa cierto elemento.
 
+===Ideas para un modelo plano útil para implementar consultas EQL:===
+
+Un modelo plano que permita reconstruir una estructura del RM, debería tener por lo menos los cambios:
+  * Archetype ID (define el tipo del RM: Observation, Action, Composition, etc)
+  * Path
+
+Se debe notar que para nodos hoja estructurados (como DvQuantity(magnitude,unit)) que además son multivaluados, se tendrán varias Paths para el mismo nodo (una para magnitude y otra para unit), y además se tendrán Paths repetidas por ser multivaluado. El problema a resolver es, en caso de tener 2 instancias del nodo, como indicar que par de Paths corresponden a una instancia del nodo y que par de Paths a la otra instancia. Esto se puede resolver agregando un atributo:
+  * Instance Node ID (para diferenciar entre instancias "gemelas").
+
+De la misma manera que se pueden tener instancias "gemelas" se pueden tener "primos gemelos", es decir que el nodo padre de un nodo hoja pueda ser múltiple, entonces tengo que saber "cuál es mi padre", y diferenciarlo de mi "tío" (gemelo de mi padre), para esto tendría un atributo:
+  * Parent ID
+
+Luego, si quisiera todas las instancias de los nodos generados para un determinado arquetipo, debería poder diferenciar estructuras enteras. Todos las instancias de nodos de una misma estructura, deberían tener una misma referencia. Para esto se tendría un atributo:
+  * Structure ID
+
+Debido a que un mismo arquetipo puede ser utilizado en distintos templates de distintas formas, también debería saber que template se usó para una estructura, así que cada nodo tendría un campo:
+  * Template ID
+
+Nota: según la especificación de openEHR los únicos nodos que tienen referencias a templates son los raíces de arquetipos.
+
+Si quisiera todas las estructuras para un determinado paciente, y además tener un nivel de indirección en la identificación, tendría un campo codificado con un algoritmo one-way como MD5, que se calculara a partir del UIDBasedID con su tipo y número. De esta forma, la única manera de saber a quien corresponde el registro es que un usuario habilitado acceda al IMP y calcule el MD5 a partir de un ID de paciente, y use ese MD5 para hacer consultas en la HCE:
+  * Party ID
+
+Como siempre se necesitan hacer consultas por fecha, agregaría dos períodos, uno para indicar cuando se llevó a cabo el acto, y otro para indicar cuando se hizo el registro del acto, la HCE le dará los valores correctos a estos campos según la semántica definida, por ejemplo si las dos fechas de cuando se hizo el acto coinciden, indica un acto puntual.
+  * effective time (Interval<DateTime>)
+  * record time (Interval<DateTime>)
+
+
+El resto de la información es propia de los datatypes del modelo y de las estructuras de datos (Cluser, Element, List, Table, etc). Se podría tener un registro genérico con los campos descritos arriba (como metadata para queries), y registros particulares para los distintos tipos de datos del RM (pero con un modelo plano basado en FKs).
+
 
 ==Data Binding==
 
 El data binding a un modelo con estructura de árbol es muy costoso. De aplanarse el modelo como se comenta en el punto anterior, el componente de data binding debe ser modificado. Con un modelo plano el data binding es directo, el único punto de complejidad a tener en cuenta es la validación de datos. La validación hoy está implementada como parte del componente data binder, que al encontrar los nodos "hoja" del árbol definido por el arquetipo, obtiene las restricciones de ese nodo y valida los datos. Con una estructura plana (no se recorre el árbol) deberá ser necesario pedirle al arquetipo explícitamente cada restricción para poder chequearla contra el dato a validar. Lo más complejo es encontrar restricciones de cardinalidad equivalentes, por ejemplo:
 
   * Se tiene una list con 2 elementos
-  * La list tiene restricción de cardinalidad 0..*
-  * Un elemento tiene ocurrencia 1..*
-  * El otro elemento tiene ocurrencia 1..*
+  * La list tiene restricción de cardinalidad 0..n
+  * Un elemento tiene ocurrencia 1..n
+  * El otro elemento tiene ocurrencia 1..n
   
 Entonces la lista debería tener cardinalidad mínima 2, y lanzar un error si tiene menos de un elemento.
 
