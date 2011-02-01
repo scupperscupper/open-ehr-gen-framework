@@ -1,5 +1,5 @@
 #summary En esta pagina se muestran algunos ejemplos de las interfaces de usuario generadas por el framework
-#labels gui
+#labels gui,Featured
 
 = Ejemplos de interfaces de usuario generadas por el framework =
 
@@ -9,13 +9,12 @@ https://docs.google.com/uc?id=0B27lX-sxkymfNGQ5MmU5ZjctMGU3ZC00ODdjLWE0ZWMtNDQ4M
 
 == Triage de trauma ==
 
-https://doc-04-50-docs.googleusercontent.com/docs/secure/pgqq9638pdh5phna38po47btc6cu16r8/bt1ma7svdcavlnrkaedrg1pv151q4rrc/1291204800000/12788313631903577932/12788313631903577932/0B27lX-sxkymfNmUzZGMyNmMtNzkxMi00ZTdiLWFmNWMtMGFhMWEwYmQ2MTYz?nonce=a2akp5lqoob5s&user=12788313631903577932&hash=16q545ft1hjhjluudntt66029n57hfhn&nonsense=img2.jpg
-
+https://docs.google.com/uc?id=0B27lX-sxkymfNmUzZGMyNmMtNzkxMi00ZTdiLWFmNWMtMGFhMWEwYmQ2MTYz&hl=en&nonsense=img2.jpg
 
 == Solicitud de exámenes de laboratorio ==
 
-https://doc-10-50-docs.googleusercontent.com/docs/secure/pgqq9638pdh5phna38po47btc6cu16r8/7hp93m2ujibh7dq5aa6vcos1pm0v319s/1293645600000/12788313631903577932/12788313631903577932/0B27lX-sxkymfY2IyMzQ3YjMtYzhiMS00Mjk5LTlmODQtODg0NGY3MGI1NTRh?nonce=ti6pvjds10r0o&user=12788313631903577932&hash=fo31ntspclocr08vs48hs36potni9i2b&nonsense=img3.jpg
+https://docs.google.com/uc?id=0B27lX-sxkymfY2IyMzQ3YjMtYzhiMS00Mjk5LTlmODQtODg0NGY3MGI1NTRh&hl=en&nonsense=img3.jpg
 
 == Acceso a estudios imagenológicos ==
 
-https://doc-08-50-docs.googleusercontent.com/docs/secure/pgqq9638pdh5phna38po47btc6cu16r8/lkslofp5jlh0bf5c091nojpd8gth7g52/1291204800000/12788313631903577932/12788313631903577932/0B27lX-sxkymfN2QzYjZlNjItMGRmYy00NTY2LWJmZTItOWMxNmVlMmYwNzVj?nonce=nvf6dd2chimhg&user=12788313631903577932&hash=1ciokvuemhlu3n9g2eapd4l0mqd4ul2i&nonsense=img4.jpg
+https://docs.google.com/uc?id=0B27lX-sxkymfN2QzYjZlNjItMGRmYy00NTY2LWJmZTItOWMxNmVlMmYwNzVj&hl=en&nonsense=img4.jpg
