@@ -1,0 +1,30 @@
+#summary Aquí pondremos ideas para optimizar el sistema y mejorar la performance
+#labels Featured,Phase-Design
+
+=Ideas para optimización=
+
+==Modelo de información==
+
+El modelo de información de openEHR es esencialmente jerárquico con una estructura de árbol de varios niveles. Esta estructura lo hace poco óptimo para realizar búsquedas, y complejiza tanto el data binding como la generación de GUI con datos de estas estructuras.
+
+La idea para optimizar este modelo es aplanarlo, conservando la estructura de árbol codificada (de forma que pueda ser construido un árbol real en cualquier momento a partir de datos planos. Para codificar la estructura de árbol se podrían usar las paths de los arquetipos openEHR que se deben guardar en el modelo de información, así teniendo el identificador del arquetipo y una path, se sabrá exactamente que lugar en el árbol ocupa cierto elemento.
+
+
+==Data Binding==
+
+El data binding a un modelo con estructura de árbol es muy costoso. De aplanarse el modelo como se comenta en el punto anterior, el componente de data binding debe ser modificado. Con un modelo plano el data binding es directo, el único punto de complejidad a tener en cuenta es la validación de datos. La validación hoy está implementada como parte del componente data binder, que al encontrar los nodos "hoja" del árbol definido por el arquetipo, obtiene las restricciones de ese nodo y valida los datos. Con una estructura plana (no se recorre el árbol) deberá ser necesario pedirle al arquetipo explícitamente cada restricción para poder chequearla contra el dato a validar. Lo más complejo es encontrar restricciones de cardinalidad equivalentes, por ejemplo:
+
+  * Se tiene una list con 2 elementos
+  * La list tiene restricción de cardinalidad 0..*
+  * Un elemento tiene ocurrencia 1..*
+  * El otro elemento tiene ocurrencia 1..*
+  
+Entonces la lista debería tener cardinalidad mínima 2, y lanzar un error si tiene menos de un elemento.
+
+
+==Generación de GUI==
+
+En lugar de regenerar la GUI cada vez, ya que se genera en base a recorrer el árbol definido en el arquetipo, se podría:
+
+  * Cachear GUIs: guardar el HTML generado y mostrar ese (p.e. si estoy editando, debería tener un mecanismo de cargarle datos a ese HTML estático, p.e. con JS).
+  * Generar la GUI en base a una estructura plana derivada del arquetipo, es decir, transformar el arquetipo original estructurado en uno plano para su uso directo. Este tipo de arquetipo plano también serviría para obtener las restricciones directamente de validación para cada nodo hoja (se menciona en el punto anterior).
