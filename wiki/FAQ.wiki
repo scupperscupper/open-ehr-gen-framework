@@ -11,6 +11,8 @@
 
 ==Configuración==
 
+  * ...
+
 ===Base de datos===
 
   * P: ¿donde se configura la base de datos?
@@ -20,3 +22,9 @@
   * R: lo único que debes hacer es crear la base de datos, la estructura de tablas la genera automáticamente Grails la primera vez que corre.
 
   * ...
+
+==Uso del sistema==
+
+  * P: al ingresar me pide usuario y clave ¿qué datos ingreso?
+  * R: existen 2 usuarios que se crean en el script de Bootstrap (adm/1234 y user/pass, el primero es un usuario médico y el segundo un usuario administrativo).
+
