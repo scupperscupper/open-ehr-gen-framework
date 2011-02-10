@@ -33,11 +33,17 @@ Si quisiera todas las estructuras para un determinado paciente, y además tener 
   * Party ID
 
 Como siempre se necesitan hacer consultas por fecha, agregaría dos períodos, uno para indicar cuando se llevó a cabo el acto, y otro para indicar cuando se hizo el registro del acto, la HCE le dará los valores correctos a estos campos según la semántica definida, por ejemplo si las dos fechas de cuando se hizo el acto coinciden, indica un acto puntual.
-  * effective time (Interval<DateTime>)
-  * record time (Interval<DateTime>)
+  * effective time (Interval&lt;DateTime&gt;)
+  * record time (Interval&lt;DateTime&gt;)
 
 
 El resto de la información es propia de los datatypes del modelo y de las estructuras de datos (Cluser, Element, List, Table, etc). Se podría tener un registro genérico con los campos descritos arriba (como metadata para queries), y registros particulares para los distintos tipos de datos del RM (pero con un modelo plano basado en FKs).
+
+
+===Referencias sobre AQL/EQL:===
+
+  * http://www.openehr.org/wiki/display/spec/AQL+Operators
+
 
 
 ==Data Binding==
