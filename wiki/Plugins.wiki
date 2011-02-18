@@ -22,6 +22,14 @@ API para conexión de plugins:
   * Funcionalidad
     * ...
   * GUI
-    * ...
+    * Widgets/aplicaciones complementarias
+    * Diseño/tema/posición de items/organización de menúes
   * Datos
     * Integración de fuentes de datos externas
+  * Verticales (incluyen varios de los anteriores)
+    * CPOE: Prescripción de medicamentos
+      * Integración con Vademecum local
+      * Soporte para codificaciones locales
+      * Mapeo a codificaciones internacionales
+      * Control completo de la prescripción (períodos de tiempo, cantidades, dosis, repeticiones, etc)
+      * Reglas para detectar conflictos/interacciones y lanzar alertas: droga-droga, droga-alimento, droga-problema de salud
