@@ -24,6 +24,7 @@ La implementación de esta interfaz puede estar basada y/o ayudar a perfilar los
 
 == API ==
 
+{{{
 // Interfaz para realizar busquedas en un EHR
 Locatable query( EHRCriteria criteria, EHRResult result )
 
@@ -39,3 +40,4 @@ EHRResult {
   List include // Dice que tipos del RM incluye (p.e. COMPOSITION, OBSERVATION, ... podrian ser conceptos concretos como ids de arquetipos)
   List exclude // Dice que tipos del RM excluye
 }
+}}}
