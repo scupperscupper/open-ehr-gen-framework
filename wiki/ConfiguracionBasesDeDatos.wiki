@@ -3,7 +3,11 @@
 
 = MySQL =
 
-TODO
+Para soportar subir imágenes de más de 1MB, es necesario cambiar la configuración de MySQL (my.ini), de lo contrario, si se desea subir una imagen de más de 1MB se obtendrá una excepción de MySQL. Por ejemplo se puede poner un valor de 10MB:
+
+{{{
+max_allowed_packet = 10M
+}}}
 
 
 = Postgres =
