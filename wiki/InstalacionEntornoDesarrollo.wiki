@@ -23,3 +23,5 @@ Posteriormente agregamos a la variable de entorno path, las siguientes rutas:
 %GRAILS_HOME%\bin y %JAVA_HOME%\bin
 
 En cuanto a la instalación del IDE Spring Source Tool Swite y de los plugins necesarios para la correcta integración con el lenguaje Groovy y el framework Grails, se recomienda seguir el [http://grails.org/STS+Integration instructivo] que se encuentra en la página de Grails, que realmente es muy sencillo. Simplemente hay que cerciorarse que el IDE quede instalado en un directorio en el cual el usuario que utilice el IDE tenga permisos de escritura (pues sino dara problemas a la hora de instalar los plugins).
+
+No es necesario utilizar este IDE para el desarrollo aunque si lo recomendamos. De todas manera podría utilizar directamente Eclipse (con los plugins para soporte Groovy) o NetBeans (que tiene integración completa con Grails, aunque con problemas de performance importantes).
