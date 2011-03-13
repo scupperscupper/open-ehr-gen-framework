@@ -12,8 +12,8 @@ En esta página se intentara especificar todos los pasos necesarios para instala
 
 Antes de instalar el framework debemos tener:
   * Java SDK 6 (JDK6): [http://www.oracle.com/technetwork/java/javase/index-137561.html instalación]
-  * Grails Framework 1.1.1: [http://www.grails.org/download/archive/Grails descarga] [http://www.grails.org/Installation instalacion]
-    * La versión de Grails DEBE ser la 1.1.1.
+  * Grails Framework 1.3.7: [http://www.grails.org/download/archive/Grails descarga] [http://www.grails.org/Installation instalacion]
+    * La versión de Grails DEBE ser la 1.3.7.
   * Cliente SVN
     * Tortoise: http://tortoisesvn.tigris.org/
     * SVN desde Eclipse (plugin subclipse): http://subclipse.tigris.org/
