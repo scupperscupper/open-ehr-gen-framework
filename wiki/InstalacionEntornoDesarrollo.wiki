@@ -13,7 +13,7 @@ El entorno de desarrollo consta del siguiente software:
 
 *Un cliente SVN (recomendamos el plugin Subversive para STS)
 
-*Un Manejador de Base de Datos (recomendamos [http://www.mysql.com/downloads/mysql/ MySQL Community Server]) y el correspondiente adaptador para acceder a la misma ([http://www.mysql.com/downloads/connector/j/  adaptador] si usa MySQL). 
+*Un Manejador de Base de Datos (recomendamos [http://www.mysql.com/downloads/mysql/ MySQL Community Server]). 
 
 = Detalles =
 
@@ -32,6 +32,4 @@ No es necesario utilizar este IDE para el desarrollo aunque si lo recomendamos. 
 
 Debemos instalar un cliente SVN. Si opto por trabajar con STS, recomendamos instalar el cliente [http://www.eclipse.org/subversive/ Subversive] de la misma forma que se instalaron los plugins para Groovy y Grails.
 
-Por ultimo, luego de descargados los fuentes con el cliente SVN desde la dirección [http://open-ehr-gen-framework.googlecode.com/svn/trunk/], debemos configurar la base de datos (ver la [http://code.google.com/p/open-ehr-gen-framework/wiki/Instalacion wiki de Instalación del Framework])
-
-Antes de comenzar a 
+Por ultimo, luego de descargados los fuentes con el cliente SVN desde la dirección [http://open-ehr-gen-framework.googlecode.com/svn/trunk/], debemos configurar la base de datos (ver la [http://code.google.com/p/open-ehr-gen-framework/wiki/Instalacion wiki de Instalación del Framework]). Si desea utilizar un Manejador de Base de Datos diferente al recomendado, deberá de proporcionar el adaptador correspondiente y almacenarlo en el directorio _lib_ del proyecto Grails.
