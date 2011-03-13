@@ -5,15 +5,15 @@ En esta página se indica como instalar el entorno de desarrollo para contribuir
 
 El entorno de desarrollo consta del siguiente software:
 
-*[http://www.oracle.com/technetwork/java/javase/downloads/index.html _JDK 1.6_ o superior]
+*[http://www.oracle.com/technetwork/java/javase/downloads/index.html JDK 1.6 o superior]
 
-*[http://www.grails.org/Download _Grais 1.3.7_]
+*[http://www.grails.org/Download Grais 1.3.7]
 
-*[http://www.springsource.com/developer/sts IDE _Spring Source Tool Swite (STS)_] (basado en _Eclipse_)
+*[http://www.springsource.com/developer/sts IDE Spring Source Tool Swite (STS)] (basado en _Eclipse_)
 
-*Un cliente _SVN_ (recomendamos el plugin Subversive para STS)
+*Un cliente SVN (recomendamos el plugin Subversive para STS)
 
-*Un _Manejador de Base de Datos_ (recomendamos [http://www.mysql.com/downloads/mysql/ MySQL Community Server]). 
+*Un Manejador de Base de Datos (recomendamos [http://www.mysql.com/downloads/mysql/ MySQL Community Server]). 
 
 = Detalles =
 
@@ -30,6 +30,6 @@ En cuanto a la instalación del IDE _Spring Source Tool Swite_ y de los plugins 
 
 No es necesario utilizar este IDE para el desarrollo aunque si lo recomendamos. De todas manera podría utilizar directamente _Eclipse_ (con los plugins para soporte _Groovy_) o _NetBeans_ (que tiene integración completa con _Grails_, aunque con problemas de performance importantes).
 
-Debemos instalar un cliente _SVN_. Si opto por trabajar con _STS_, recomendamos instalar el cliente [http://www.eclipse.org/subversive/ _Subversive_] de la misma forma que se instalaron los plugins para _Groovy_ y _Grails_.
+Debemos instalar un cliente _SVN_. Si opto por trabajar con _STS_, recomendamos instalar el cliente [http://www.eclipse.org/subversive/ Subversive] de la misma forma que se instalaron los plugins para _Groovy_ y _Grails_.
 
-Por ultimo, luego de descargados los fuentes con el cliente _SVN_ desde la dirección [http://open-ehr-gen-framework.googlecode.com/svn/trunk/], debemos configurar la base de datos (ver la [http://code.google.com/p/open-ehr-gen-framework/wiki/Instalacion wiki de Instalación del Framework]). Si desea utilizar un _Manejador de Base de Datos_ diferente al recomendado (_MySQL_), deberá de proporcionar el adaptador correspondiente y almacenarlo en el directorio _lib_ del proyecto _Grails_.
+Por ultimo, luego de descargados los fuentes con el cliente _SVN_ desde la dirección [http://open-ehr-gen-framework.googlecode.com/svn/trunk/], debemos configurar la base de datos (ver la [http://code.google.com/p/open-ehr-gen-framework/wiki/Instalacion wiki de Instalación del Framework]). Si desea utilizar un Manejador de Base de Datos diferente al recomendado (_MySQL_), deberá de proporcionar el adaptador correspondiente y almacenarlo en el directorio _lib_ del proyecto _Grails_.
