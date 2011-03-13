@@ -8,13 +8,15 @@ El entorno de desarrollo consta del siguiente software:
 
 *[http://www.grails.org/Download Grais 1.3.7]
 
-*[http://www.springsource.com/developer/sts IDE Spring Source Tool Swite] (basado en Eclipse)
+*[http://www.springsource.com/developer/sts IDE Spring Source Tool Swite (STS)] (basado en Eclipse)
 
-Un Manejador de Base de Datos (recomendamos [http://www.mysql.com/downloads/mysql/ MySQL Community Server]) y el correspondiente adaptador para acceder a la misma ([http://www.mysql.com/downloads/connector/j/  adaptador] si usa MySQL). 
+*Un cliente SVN (recomendamos el plugin Suversive para STS)
 
-= Details =
+*Un Manejador de Base de Datos (recomendamos [http://www.mysql.com/downloads/mysql/ MySQL Community Server]) y el correspondiente adaptador para acceder a la misma ([http://www.mysql.com/downloads/connector/j/  adaptador] si usa MySQL). 
 
-Luego de descargar e instalar la última versión del Java Development Kit (JDK), y de descargar Grails y descomprimirlo en algún directorio adecuado, creamos dos variables de entorno:
+= Detalles =
+
+Luego de descargar e instalar la última versión del Java Development Kit (JDK), de descargar Grails y descomprimirlo en algún directorio adecuado, creamos dos variables de entorno:
 
 JAVA_HOME: Con la ruta al directorio en donde fue instalado java.
 y
