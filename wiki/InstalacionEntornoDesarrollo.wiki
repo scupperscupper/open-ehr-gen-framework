@@ -10,6 +10,7 @@ El entorno de desarrollo consta del siguiente software:
 
 *[http://www.springsource.com/developer/sts IDE Spring Source Tool Swite] (basado en Eclipse)
 
+Un Manejador de Base de Datos (recomendamos [http://www.mysql.com/downloads/mysql/ MySQL Community Server]) y el correspondiente adaptador para acceder a la misma ([http://www.mysql.com/downloads/connector/j/  adaptador] si usa MySQL). 
 
 = Details =
 
