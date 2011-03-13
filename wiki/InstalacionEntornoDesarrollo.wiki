@@ -1,3 +1,4 @@
+#labels Phase-Implementation,Phase-Deploy
 En esta página se indica como instalar el entorno de desarrollo para contribuir en el desarrollo del Open EHR-Gen Framework.
 
 = Introducción =
