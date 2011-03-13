@@ -4,16 +4,22 @@ En esta página se indica como instalar el entorno de desarrollo para contribuir
 
 El entorno de desarrollo consta del siguiente software:
 
-*JDK 1.5 o superior
+*[http://www.oracle.com/technetwork/java/javase/downloads/index.html JDK 1.5 o superior]
 
 *[http://www.grails.org/Download Grais 1.3.7]
 
-*IDE Eclipse o 
+*[http://www.springsource.com/developer/sts IDE Spring Source Tool Swite] (basado en Eclipse)
 
 
 = Details =
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Luego de descargar e instalar la última versión del Java Development Kit (JDK), y de descargar Grails y descomprimirlo en algún directorio adecuado, creamos dos variables de entorno:
+
+JAVA_HOME: Con la ruta al directorio en donde fue instalado java.
+y
+GRAILS_HOME: Con la ruta al directorio en donde fue descomprimido Grails
+
+Posteriormente agregamos a la variable de entorno path, las siguientes rutas:
+%GRAILS_HOME%\bin y %JAVA_HOME%\bin
+
+En cuanto a la instalación del IDE Spring Source Tool Swite y de los plugins necesarios para la correcta integración con el lenguaje Groovy y el framework Grails, se recomienda seguir el [http://grails.org/STS+Integration instructivo] que se encuentra en la página de Grails, que realmente es muy sencillo. Simplemente hay que cerciorarse que el IDE quede instalado en un directorio en el cual el usuario que utilice el IDE tenga permisos de escritura (pues sino dara problemas a la hora de instalar los plugins).
