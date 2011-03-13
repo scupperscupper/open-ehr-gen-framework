@@ -17,19 +17,19 @@ El entorno de desarrollo consta del siguiente software:
 
 = Detalles =
 
-Luego de descargar e instalar la última versión del Java Development Kit (JDK), de descargar Grails y descomprimirlo en algún directorio adecuado, creamos dos variables de entorno:
+Luego de descargar e instalar la última versión del _Java Development Kit (JDK)_, de descargar _Grails_ y descomprimirlo en algún directorio adecuado, creamos dos variables de entorno:
 
-JAVA_HOME: Con la ruta al directorio en donde fue instalado java.
+_JAVA_HOME_: Con la ruta al directorio en donde fue instalado _Java_.
 y
-GRAILS_HOME: Con la ruta al directorio en donde fue descomprimido Grails
+_GRAILS_HOME_: Con la ruta al directorio en donde fue descomprimido _Grails_
 
-Posteriormente agregamos a la variable de entorno path, las siguientes rutas:
-%GRAILS_HOME%\bin y %JAVA_HOME%\bin
+Posteriormente agregamos a la variable de entorno _path_, las siguientes rutas:
+_%GRAILS_HOME%\bin_ y _%JAVA_HOME%\bin_
 
-En cuanto a la instalación del IDE Spring Source Tool Swite y de los plugins necesarios para la correcta integración con el lenguaje Groovy y el framework Grails, se recomienda seguir el [http://grails.org/STS+Integration instructivo] que se encuentra en la página de Grails, que realmente es muy sencillo. Simplemente hay que cerciorarse que el IDE quede instalado en un directorio en el cual el usuario que utilice el IDE tenga permisos de escritura (pues sino dara problemas a la hora de instalar los plugins).
+En cuanto a la instalación del IDE _Spring Source Tool Swite_ y de los plugins necesarios para la correcta integración con el lenguaje _Groovy_ y el _Framework Grails_, se recomienda seguir el [http://grails.org/STS+Integration instructivo] que se encuentra en la página de _Grails_, que realmente es muy sencillo. Simplemente hay que cerciorarse que el IDE quede instalado en un directorio en el cual el usuario que utilice el IDE tenga permisos de escritura (pues sino dara problemas a la hora de instalar los plugins).
 
-No es necesario utilizar este IDE para el desarrollo aunque si lo recomendamos. De todas manera podría utilizar directamente Eclipse (con los plugins para soporte Groovy) o NetBeans (que tiene integración completa con Grails, aunque con problemas de performance importantes).
+No es necesario utilizar este IDE para el desarrollo aunque si lo recomendamos. De todas manera podría utilizar directamente _Eclipse_ (con los plugins para soporte Groovy) o _NetBeans_ (que tiene integración completa con Grails, aunque con problemas de performance importantes).
 
-Debemos instalar un cliente SVN. Si opto por trabajar con STS, recomendamos instalar el cliente [http://www.eclipse.org/subversive/ Subversive] de la misma forma que se instalaron los plugins para Groovy y Grails.
+Debemos instalar un cliente _SVN_. Si opto por trabajar con _STS_, recomendamos instalar el cliente [http://www.eclipse.org/subversive/ _Subversive_] de la misma forma que se instalaron los plugins para _Groovy_ y _Grails_.
 
-Por ultimo, luego de descargados los fuentes con el cliente SVN desde la dirección [http://open-ehr-gen-framework.googlecode.com/svn/trunk/], debemos configurar la base de datos (ver la [http://code.google.com/p/open-ehr-gen-framework/wiki/Instalacion wiki de Instalación del Framework]). Si desea utilizar un Manejador de Base de Datos diferente al recomendado, deberá de proporcionar el adaptador correspondiente y almacenarlo en el directorio _lib_ del proyecto Grails.
+Por ultimo, luego de descargados los fuentes con el cliente _SVN_ desde la dirección [http://open-ehr-gen-framework.googlecode.com/svn/trunk/], debemos configurar la base de datos (ver la [http://code.google.com/p/open-ehr-gen-framework/wiki/Instalacion wiki de Instalación del Framework]). Si desea utilizar un Manejador de Base de Datos diferente al recomendado, deberá de proporcionar el adaptador correspondiente y almacenarlo en el directorio _lib_ del proyecto _Grails_.
