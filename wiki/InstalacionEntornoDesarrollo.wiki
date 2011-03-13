@@ -10,7 +10,7 @@ El entorno de desarrollo consta del siguiente software:
 
 *[http://www.springsource.com/developer/sts IDE Spring Source Tool Swite (STS)] (basado en Eclipse)
 
-*Un cliente SVN (recomendamos el plugin Suversive para STS)
+*Un cliente SVN (recomendamos el plugin Subversive para STS)
 
 *Un Manejador de Base de Datos (recomendamos [http://www.mysql.com/downloads/mysql/ MySQL Community Server]) y el correspondiente adaptador para acceder a la misma ([http://www.mysql.com/downloads/connector/j/  adaptador] si usa MySQL). 
 
@@ -28,3 +28,9 @@ Posteriormente agregamos a la variable de entorno path, las siguientes rutas:
 En cuanto a la instalación del IDE Spring Source Tool Swite y de los plugins necesarios para la correcta integración con el lenguaje Groovy y el framework Grails, se recomienda seguir el [http://grails.org/STS+Integration instructivo] que se encuentra en la página de Grails, que realmente es muy sencillo. Simplemente hay que cerciorarse que el IDE quede instalado en un directorio en el cual el usuario que utilice el IDE tenga permisos de escritura (pues sino dara problemas a la hora de instalar los plugins).
 
 No es necesario utilizar este IDE para el desarrollo aunque si lo recomendamos. De todas manera podría utilizar directamente Eclipse (con los plugins para soporte Groovy) o NetBeans (que tiene integración completa con Grails, aunque con problemas de performance importantes).
+
+Debemos instalar un cliente SVN. Si opto por trabajar con STS, recomendamos instalar el cliente [http://www.eclipse.org/subversive/ Subversive] de la misma forma que se instalaron los plugins para Groovy y Grails.
+
+Por ultimo, luego de descargados los fuentes con el cliente SVN desde la dirección [http://open-ehr-gen-framework.googlecode.com/svn/trunk/], debemos configurar la base de datos (ver la [http://code.google.com/p/open-ehr-gen-framework/wiki/Instalacion wiki de Instalación del Framework])
+
+Antes de comenzar a 
