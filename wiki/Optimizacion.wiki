@@ -11,6 +11,8 @@ La idea para optimizar este modelo es aplanarlo, conservando la estructura de á
 
 ===Ideas para un modelo plano útil para implementar consultas EQL:===
 
+El modelo plano puede servir para sustituir al estructurado (se podría elegir usar uno u otro), o también como índice del modelo estructurado, que se crea cuando el registro ya está cerrado (esto evita tener que cambiar GUIGen y DataBinder, y también permite hacer consultas, pero siguen habiendo problemas de performance en el binder para estructuras grandes).
+
 Un modelo plano que permita reconstruir una estructura del RM, debería tener por lo menos los cambios:
   * Archetype ID (define el tipo del RM: Observation, Action, Composition, etc)
   * Path
