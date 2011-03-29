@@ -33,3 +33,9 @@ API para conexión de plugins:
       * Mapeo a codificaciones internacionales
       * Control completo de la prescripción (períodos de tiempo, cantidades, dosis, repeticiones, etc)
       * Reglas para detectar conflictos/interacciones y lanzar alertas: droga-droga, droga-alimento, droga-problema de salud
+    * Solicitud de estudios de laboratorio
+      * Puede ser solo la orden o (p.e. en emergencia) la orden va con una muestra que se saca en el lugar de la atención. En este caso habría que pensar en algo que pudiera imprimir los datos patronímicos de la persona en etiquetas adhesivas que se pegarán en las muestras, y analizar la posibilidad de imprimir códigos de barras con la identificación del paciente.
+      * También se espera la integración desde el laboratorio donde se reportan los resultados, y estos deben mostrarse en la HCE (posiblemente junto a la orden).
+    * Solicitud de estudios imagenológicos
+      * Debe estar la solicitud del estudio a radiología y la obtención del resultado (notificación desde radiología).
+      * Puede incluir la visualización de contenido almacenado en un PACS o RIS (imágenes, videos, informe radiológico).
