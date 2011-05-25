@@ -47,6 +47,14 @@ El resto de la información es propia de los datatypes del modelo y de las estru
   * http://www.openehr.org/wiki/display/spec/AQL+Operators
 
 
+=== Ideas sobre un modelo de información mínimo ===
+
+Sabiendo que muchos niveles de la estructura que conforma un registro clínico completo, que cumple con el modelo de referencia de openEHR, es derivado en gran medida a partir de los arquetipos, y con pocos o ningún dato ingresado por el usuario o por el sistema, cabe preguntarse: ¿porqué debe generarse una estructura completa al hacer DataBinding? Es decir, ¿porqué generar una estructura completa y persistirla físicamente, si gran parte de esta puede ser total o parcialmente generada con el procesamiento de arquetipos?
+
+La propuesta es explorar la idea de plantear un modelo de persistencia mínimo necesario para guardar toda la información, tal que con la estructura mínima y los arquetipos correspondientes, se pueda generar una estructura completa cuando sea requerido. Si este modelo existiera, el proceso de DataBinding sería más simple y más performante.
+
+Para hacer el análisis, es necesario analizar estructuras completas, identificar cuáles datos fueron ingresados por el usuario o por el sistema, e identificar todo lo demás que fue derivado de un conjunto de arquetipos. A simple vista, parece que con un nivel de CLUSTERs y un nivel de ELEMENTs, se tendría un 90% de toda la información clínica ingresada por el usuario. Luego habría que analizar cómo asociar información demográfica, y por último, ver donde va toda la información relacionada con el documento clínico (COMPOSITION) como fechas, descripciones, firma del responsable, lugares físicos y servicios asociados, etc, etc.
+
 
 ==Data Binding==
 
