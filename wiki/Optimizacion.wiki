@@ -1,6 +1,8 @@
 #summary Aquí pondremos ideas para optimizar el sistema y mejorar la performance
 #labels Featured,Phase-Design
 
+<wiki:toc max_depth="3" />
+
 =Ideas para optimización=
 
 ==Modelo de información==
