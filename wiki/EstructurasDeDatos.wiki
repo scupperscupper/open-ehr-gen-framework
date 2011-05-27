@@ -7,20 +7,19 @@ Los documentos clínicos que maneja el framework tienen una parte de datos clín
 
 
 = Datos básicos de cada documento clínico =
-
+{{{
   * fecha de inicio: Composition.<EventContext>context.<DvDateTime>startTime
   * fecha de cierre: Composition.<EventContext>context.<DvDateTime>endTime
   * observaciones al ingreso: Composition.<EventContext>context.<ItemSingle>otherContext.<Element>item.<DvText>value.<String>value
-
+}}}
 
 = Información del paciente =
-
+{{{
   * identificación del paciente:
     * ps = composition.<EventContext>context.participations
     * dentro de ps hay una Participation que su 'performer' es PartySelf, y que su función es 'subject of care'.
     * PartySelf.objectId: root/extension (tipo de identificador/identificador)
-
-
+}}}
 
 = Estado del registro =
 
@@ -34,4 +33,3 @@ Estados posibles:
   * Se guarda en version.lifecycleState
 
 En Version.data se guarda la referencia a la Composition para la cual se define el estado, de esta forma, hay varias instancias de Version para la misma instancia de Composition. _Hoy se tiene solo una instancia de Version para una Composition, sobreescribiendo el estado, por lo que no se tiene la traza de cambios de estados. Esto se debe corregir._
-
