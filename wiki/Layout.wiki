@@ -1,6 +1,9 @@
 #labels Featured,Layout
 En esta wiki se exponen ideas sobre la definición y manejo de layout (posicionamiento espacial) dentro de OPEN EHR-Gen
 
+<wiki:toc max_depth="3" />
+
+
 = Introduccción =
 
 Actualmente Open EHR-Gen trabaja con un solo layout, definido en el propio software. La idea es que el framework soporte varios layout y que estos sean definidos en la base de conocimiento (al igual que Arquetipos y Templates) y a la hora de definir un Template se elija uno de estos layout para disponer espacialmente el contenido definido en el Template.
@@ -10,6 +13,7 @@ Actualmente Open EHR-Gen trabaja con un solo layout, definido en el propio softw
 
 A continuación se muestra un XML de ejemplo en el cual se ve como se podría definir un layout:
 
+{{{
 <layput>
   <id>id_layout_ejemplo</id>
   <name>nombre_layout_ejemplo</name>
@@ -71,3 +75,4 @@ A continuación se muestra un XML de ejemplo en el cual se ve como se podría de
     </termDefinition>
   </ontology>
 </layput>
+}}}
