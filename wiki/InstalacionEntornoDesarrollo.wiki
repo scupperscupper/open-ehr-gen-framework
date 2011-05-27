@@ -9,14 +9,11 @@ En esta página se indica como instalar el entorno de desarrollo para contribuir
 El entorno de desarrollo consta del siguiente software:
 
   * [http://www.oracle.com/technetwork/java/javase/downloads/index.html JDK 1.6 o superior]
-
   * [http://www.grails.org/Download Grais 1.3.7]
-
   * [http://www.springsource.com/developer/sts IDE Spring Source Tool Swite (STS)] (basado en _Eclipse_)
-
   * Un cliente SVN (recomendamos el plugin Subversive para STS)
-
   * Un Manejador de Base de Datos (recomendamos [http://www.mysql.com/downloads/mysql/ MySQL Community Server]). 
+
 
 = Detalles =
 
