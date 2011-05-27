@@ -1,0 +1,37 @@
+#summary Documenación acerca de la estructura de datos de los documentos clínicos de cualquier dominio.
+#labels Featured
+
+= Introducción =
+
+Los documentos clínicos que maneja el framework tienen una parte de datos clínicos y otra de datos demográficos/administrativos. Todo documento clínico es representado mediante la clase COMPOSITION del modelo de referencia del estándar openEHR.
+
+
+= Datos básicos de cada documento clínico =
+
+  * fecha de inicio: Composition.<EventContext>context.<DvDateTime>startTime
+  * fecha de cierre: Composition.<EventContext>context.<DvDateTime>endTime
+  * observaciones al ingreso: Composition.<EventContext>context.<ItemSingle>otherContext.<Element>item.<DvText>value.<String>value
+
+
+= Información del paciente =
+
+  * identificación del paciente:
+    * ps = composition.<EventContext>context.participations
+    * dentro de ps hay una Participation que su 'performer' es PartySelf, y que su función es 'subject of care'.
+    * PartySelf.objectId: root/extension (tipo de identificador/identificador)
+
+
+
+= Estado del registro =
+
+A medida que avanza el proceso de atención, el registro clínico pasa por distintos estados, que quedan almacenados en distintas instancias de la clase VERSION del modelo de información de openEHR.
+
+Estados posibles:
+
+  * STATE_INCOMPLETE: registro incompleto.
+  * STATE_COMPLETE: registro completo (proceso clínico cerrado, y el paciente correctamente identificado).
+  * STATE_SIGNED: registro firmado.
+  * Se guarda en version.lifecycleState
+
+En Version.data se guarda la referencia a la Composition para la cual se define el estado, de esta forma, hay varias instancias de Version para la misma instancia de Composition. _Hoy se tiene solo una instancia de Version para una Composition, sobreescribiendo el estado, por lo que no se tiene la traza de cambios de estados. Esto se debe corregir._
+
