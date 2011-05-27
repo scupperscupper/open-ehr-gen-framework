@@ -1,6 +1,9 @@
 #summary Medidas de seguridad
 #labels Phase-Requirements,Phase-Design
 
+<wiki:toc max_depth="3" />
+
+
 = Introducción =
 
 Para lograr incorporar una HCE basada en Open EHR-Gen en un ambiente de producción, es necesario disponer de mecanismos de alto nivel para la definición de permisos y la gestión de usuarios. Los permisos deberían ser administrables desde la aplicación (o desde una aplicación que utilice la misma DB). La granularidad debería ser lo más fina posible, y las condiciones de acceso deberían basarse en múltiples factores.
