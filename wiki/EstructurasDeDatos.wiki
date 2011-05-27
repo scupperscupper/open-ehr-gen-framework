@@ -21,6 +21,11 @@ Los documentos clínicos que maneja el framework tienen una parte de datos clín
     * PartySelf.objectId: root/extension (tipo de identificador/identificador)
 }}}
 
+= Información del responsable de la atención =
+{{{
+  * Composition.<PartyIdentified>composer
+}}}
+
 = Estado del registro =
 
 A medida que avanza el proceso de atención, el registro clínico pasa por distintos estados, que quedan almacenados en distintas instancias de la clase VERSION del modelo de información de openEHR.
@@ -33,3 +38,9 @@ Estados posibles:
   * Se guarda en version.lifecycleState
 
 En Version.data se guarda la referencia a la Composition para la cual se define el estado, de esta forma, hay varias instancias de Version para la misma instancia de Composition. _Hoy se tiene solo una instancia de Version para una Composition, sobreescribiendo el estado, por lo que no se tiene la traza de cambios de estados. Esto se debe corregir._
+
+= Información clínica =
+
+{{{
+Toda la información clínica está en Composition.<Collection<ContentItem>>content
+}}}
