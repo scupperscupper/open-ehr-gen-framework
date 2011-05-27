@@ -1,6 +1,8 @@
 #summary Documenación acerca de la estructura de datos de los documentos clínicos de cualquier dominio.
 #labels Featured
 
+<wiki:toc max_depth="3" />
+
 = Introducción =
 
 Los documentos clínicos que maneja el framework tienen una parte de datos clínicos y otra de datos demográficos/administrativos. Todo documento clínico es representado mediante la clase COMPOSITION del modelo de referencia del estándar openEHR.
