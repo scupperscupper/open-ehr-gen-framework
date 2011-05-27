@@ -57,6 +57,8 @@ La propuesta es explorar la idea de plantear un modelo de persistencia mínimo n
 
 Para hacer el análisis, es necesario analizar estructuras completas, identificar cuáles datos fueron ingresados por el usuario o por el sistema, e identificar todo lo demás que fue derivado de un conjunto de arquetipos. A simple vista, parece que con un nivel de CLUSTERs y un nivel de ELEMENTs, se tendría un 90% de toda la información clínica ingresada por el usuario. Luego habría que analizar cómo asociar información demográfica, y por último, ver donde va toda la información relacionada con el documento clínico (COMPOSITION) como fechas, descripciones, firma del responsable, lugares físicos y servicios asociados, etc, etc.
 
+Relevamiento de datos útiles y donde van en las estructuras del modelo de información: http://code.google.com/p/open-ehr-gen-framework/wiki/EstructurasDeDatos
+
 
 ==Data Binding==
 
