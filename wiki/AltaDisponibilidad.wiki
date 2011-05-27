@@ -1,6 +1,9 @@
 #summary Ideas sobre alta disponibilidad
 #labels Phase-Requirements,Phase-QA
 
+<wiki:toc max_depth="3" />
+
+
 = Introducción =
 
 Los sistemas de información en salud pueden considerarse sistemas críticos, los cuales deben garantizar alta disponibilidad, y comportamiento robusto ante fallas y situaciones excepcionales.
