@@ -1,6 +1,9 @@
 #summary implementación de la interfaz de Virtual EHR
 #labels openehr,sm,api,virtualehr,todo,Phase-Requirements,Featured
 
+<wiki:toc max_depth="3" />
+
+
 = Introducción =
 
 Esta interfaz permitirá ver a distintos sistemas de Historia Clínica Electrónica como un solo sistema integrado, tanto desde el punto de vista de los médicos como de los pacientes, y ofrecerá servicios a todos los actores del sistema de salud.
