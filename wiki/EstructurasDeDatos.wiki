@@ -46,3 +46,25 @@ En Version.data se guarda la referencia a la Composition para la cual se define 
 {{{
 Toda la información clínica está en Composition.<Collection<ContentItem>>content
 }}}
+
+ContentItem:
+  * Clase abstracta, es el primer nivel de información clínica.
+  * Patrón composite con subclases Section y Entry.
+  * No almacena información, solo es estructura.
+
+Section:
+  * Subclase de CobntentItem.
+  * No almacena información, solo es estructura.
+    * Árbol de ContentItem.
+  * Cluster alcanza para modelar la misma estructura.
+
+Entry:
+  * Clase hoja del composite de ContentItem
+  * Guarda información:
+    * language
+    * encoding
+    * subject (no usado)
+    * provider (no usado)
+    * workflowId (no usado)
+    * otherParticipations (no usado)
+  * Ninguna de esta información es ingresada por el médico, es toda sacada del contexto del sistema, entonces puede ser representado en otra estructura más alguna metadata que especifique a qué entry de qué arquetipo corresponde. La idea es que esta estructura sea simple de consultar.
