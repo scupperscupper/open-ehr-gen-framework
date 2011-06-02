@@ -44,3 +44,23 @@ EHRResult {
   List exclude // Dice que tipos del RM excluye
 }
 }}}
+
+
+= Estructura interna de registros de un EHR =
+
+El EHR debería poder soportar agregar documentación clínica en diversos formatos, además de que se tengan los datos estructurados en Compositions.
+
+Entonces, del EHR de un paciente, se podrían tener asociadas:
+  * Compositions
+  * CDAs
+  * CCRs
+  * 13606
+  * otros (pdfs, docs, etc)
+
+Para que esto funcione, como los datos que se visualizarán no dependen del tipo de estructura en que esté la información, estos deben tener datos en común que permitan ordenar, buscar, filtrar registros, tales como:
+  * fechas
+  * tipo/clase
+  * identificación del paciente
+  * identificación del responsable
+  * otros...
+
