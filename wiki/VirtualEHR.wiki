@@ -19,6 +19,7 @@ Si bien la especificación del Modelo de Servicios (SM) de OpenEHR está en esta
 
   * http://www.openehr.org/wiki/display/spec/openEHR+Service+Model
   * http://www.openehr.org/wiki/display/spec/vEHR+Service+Specification
+  * http://www.openehr.org/wiki/display/spec/Ocean+EhrGate+-+TDO+programming+example
 
 
 = Ideas =
