@@ -1,0 +1,3 @@
+#summary Información sobre cómo integrar OpenEHR-Gen con un sistema de información demográfica (de pacientes) en cualquier institución prestadora de servicios de salud.
+
+TODO
