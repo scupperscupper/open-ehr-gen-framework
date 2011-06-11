@@ -81,3 +81,16 @@ En lugar de regenerar la GUI cada vez, ya que se genera en base a recorrer el á
 
   * Cachear GUIs: guardar el HTML generado y mostrar ese (p.e. si estoy editando, debería tener un mecanismo de cargarle datos a ese HTML estático, p.e. con JS).
   * Generar la GUI en base a una estructura plana derivada del arquetipo, es decir, transformar el arquetipo original estructurado en uno plano para su uso directo. Este tipo de arquetipo plano también serviría para obtener las restricciones directamente de validación para cada nodo hoja (se menciona en el punto anterior).
+
+
+=Caching para visualización de registros clínicos=
+
+Por su naturaleza, los registros clínicos son utilizados más en modo "solo lectura", por su naturaleza documental/histórica. Por lo tanto, puede servir concentrarse en acelerar la parte de visualización de registros.
+
+Hoy el sistema trae de la base de datos cada registro del paciente, cada vez que un usuario desea verlo. Sería interesante ver cómo disminuir las transacciones a la base, tal vez con un cacheo en memoria.
+
+El tamaño de este caché podría ser configurable (para adaptarlo a la infraestructura de hardware disponible), y podría tener distintos modos de ejecución, p.e. "online" y "offline". En el modo "online", los registros que son referenciados, se cargan la primera vez desde la base y se ponen en caché, luego por alguna criterio de tiempo, envejecimiento o cantidad de hits, se borraría del caché. Mientras esté en caché, no se consultaría a la base de datos. En el modo "offline", podrían haber procesos por lotes que corren cada noche, y cachean todos los documentos que interesan (p.e. los 10 últimos) para los pacientes que tendrán una consulta el día de mañana (habría que tener algún tipo de integración con Agenda y el Demográfico). De esta forma, muchos de los registros clínicos a cargarse en las próximas consultas médicas, tendrán gran cantidad de hits, aliviando la carga en la base de datos.
+
+Incluso, no solo las estructuras de datos podrían cachearse, sino que podrían cachearse las vistas, que también serían estáticas debido a que los datos son estáticos. Incluso, otras opciones serían generar CDAs, o PDFs, y cachear eso en lugar de la estructura de datos (u otra opción útil para mostrar datos, y que utilice la menor memoria posible, p.e. un string JSON).
+
+En el caso del string JSON, se podría hacer un GuiGen Javascript, que funcione del lado del usuario, por lo que se disminuye la carga en servidor, y ser aceleran los tiempos de render. En este caso, tal vez se necesitaría también una representación JSON de los arquetipos y templates involucrados.
