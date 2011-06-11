@@ -22,6 +22,21 @@ Simplificar el modelo significa: 1. estructura de clases más simple (menos clas
   * observaciones al ingreso: Composition.<EventContext>context.<ItemSingle>otherContext.<Element>item.<DvText>value.<String>value
 }}}
 
+== Datos internos de la composition ==
+{{{
+  * language: idioma en el que está el registro.
+  * territory: país/región donde se hizo el registro
+  * category: categoría del registro según vocabulario "composition category" de openEHR.
+}}}
+
+== Más datos del contexto de la composition ==
+{{{
+  * location: ubicación exacta donde se brinda el cuidado (sería el point of care).
+  * setting: servicio donde se brinda el cuidado, según vocabulario "setting" de openEHR.
+  * health_care_facility: The health care facility under whose care the event took place. This is the most specific workgroup or delivery unit within a care delivery enterprise that has an official identifier in the health system, and can be used to ensure medico-legal accountability.
+}}}
+
+
 = Información del paciente =
 {{{
   * identificación del paciente:
@@ -86,4 +101,3 @@ El campo otherParticipations es como un comodín para especificar otros actores 
 == Subclases de Entry ==
 
 Las subclases de Entry son básicamente contenedores de estructuras (ItemStructure y History) de datos clínicos. Más allá de los atributos de Entry antes mencionados, todo el nivel de estructuras se considera como "clases estructurales" que pueden ser derivadas desde el arquetipo, y por lo tanto, no se necesita persistencia explícita para esas clases.
-
