@@ -21,3 +21,8 @@ Las reglas de seguridad deberían definirse en base a los siguientes factores:
     * Acceso desde una estación con su IP dentro de un rango dado
 
 Para un usuario, se podrían definir un conjunto de reglas en base a estos factores, y esas reglas se verificarían según el contexto, escalando de reglas generales a reglas particulares en caso de cumplirse. Si una regla genérica no se cumple, no se escala a la siguiente regla.
+
+
+=Trazabilidad y logging=
+
+Este plugin de Grails está interesante para las tareas de logging: http://www.grails.org/plugin/audit-logging
