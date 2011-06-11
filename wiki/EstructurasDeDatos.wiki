@@ -18,8 +18,6 @@ Simplificar el modelo significa: 1. estructura de clases más simple (menos clas
 = Datos básicos de cada documento clínico =
 {{{
   * fecha de inicio: Composition.<EventContext>context.<DvDateTime>startTime
-
-
   * fecha de cierre: Composition.<EventContext>context.<DvDateTime>endTime
   * observaciones al ingreso: Composition.<EventContext>context.<ItemSingle>otherContext.<Element>item.<DvText>value.<String>value
 }}}
@@ -70,17 +68,17 @@ Toda la información clínica está en Composition.<Collection<ContentItem>>cont
 *Entry:*
   * Clase hoja del composite de ContentItem
   * Guarda información:
-    * language: indica el idioma en el que está escrito el contenido de la entrada. (*)
-    * encoding: indica la codificación de caracteres del texto en la entrada. (*)
-    * subject (no usado) (*)
-    * provider (no usado) (*)
-    * workflowId (no usado) (**)
+    * language: indica el idioma en el que está escrito el contenido de la entrada. (a)
+    * encoding: indica la codificación de caracteres del texto en la entrada. (a)
+    * subject (no usado) (a)
+    * provider (no usado) (a)
+    * workflowId (no usado) (b)
     * otherParticipations (no usado)
   * Ninguna de esta información es ingresada por el médico, es toda sacada del contexto del sistema, entonces puede ser representado en otra estructura más alguna metadata que especifique a qué entry de qué arquetipo corresponde. La idea es que esta estructura sea simple de consultar.
 
-(*) Para simplificar muchos aspectos, pero además porque es como se va a usar, todas las entradas de una misma composition tendrán los mismos: language, encoding, subject. Provider es un caso especial porque es quien provee la información en el registro. Si el paciente provee parte de la información (algunas entradas), o un médico, o la institución o un dispositivo médico, cada entrada debería reflejarlo. Pero si toda la información de una composition es provista por un solo agente, no sería necesario especificarlo por entrada.
+(a) Para simplificar muchos aspectos, pero además porque es como se va a usar, todas las entradas de una misma composition tendrán los mismos: language, encoding, subject. Provider es un caso especial porque es quien provee la información en el registro. Si el paciente provee parte de la información (algunas entradas), o un médico, o la institución o un dispositivo médico, cada entrada debería reflejarlo. Pero si toda la información de una composition es provista por un solo agente, no sería necesario especificarlo por entrada.
 
-(**) workflowId se utilizará para identificar el flujo de trabajo al cual el registro (entrada) está asociado, de forma de que se puedan ver todas las entradas que corresponden a un mismo flujo de trabajo, por ejemplo, ordenadas de forma cronológica. Además junto a los cambios de estado, y al enganche entre indicaciones/actividades y sus respectivas acciones, se podría tener una visión completa de la ejecución de un determinado flujo de trabajo. Un flujo podría ser un proceso clínico, una guía de práctica clínica o un algoritmo clínico.
+(b) workflowId se utilizará para identificar el flujo de trabajo al cual el registro (entrada) está asociado, de forma de que se puedan ver todas las entradas que corresponden a un mismo flujo de trabajo, por ejemplo, ordenadas de forma cronológica. Además junto a los cambios de estado, y al enganche entre indicaciones/actividades y sus respectivas acciones, se podría tener una visión completa de la ejecución de un determinado flujo de trabajo. Un flujo podría ser un proceso clínico, una guía de práctica clínica o un algoritmo clínico.
 
 El campo otherParticipations es como un comodín para especificar otros actores que participaron de la entrada (supongo que jugando algún rol en el proceso del cual se registró información). Creo que esto debería estar a nivel de composition solo, así se simplifica el nivel de entradas. Y si se desea especificar otras participaciones para entradas específicas, se podrá modelar otra composition y ahí se ponen las participaciones. Luego habrá varias formas de correspondencia entre las compositions, 1. serán para el mismo paciente, 2. pueden estar en el mismo marco de tiempo (p.e. mismo día), 3. probablemente tendrán el mismo workflowId, 4. puede ser que el médico responsable del registro sea el mismo.
 
@@ -88,3 +86,4 @@ El campo otherParticipations es como un comodín para especificar otros actores 
 == Subclases de Entry ==
 
 Las subclases de Entry son básicamente contenedores de estructuras (ItemStructure y History) de datos clínicos. Más allá de los atributos de Entry antes mencionados, todo el nivel de estructuras se considera como "clases estructurales" que pueden ser derivadas desde el arquetipo, y por lo tanto, no se necesita persistencia explícita para esas clases.
+
