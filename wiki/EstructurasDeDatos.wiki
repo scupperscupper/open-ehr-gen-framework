@@ -98,12 +98,41 @@ Toda la información clínica está en Composition.<Collection<ContentItem>>cont
 El campo otherParticipations es como un comodín para especificar otros actores que participaron de la entrada (supongo que jugando algún rol en el proceso del cual se registró información). Creo que esto debería estar a nivel de composition solo, así se simplifica el nivel de entradas. Y si se desea especificar otras participaciones para entradas específicas, se podrá modelar otra composition y ahí se ponen las participaciones. Luego habrá varias formas de correspondencia entre las compositions, 1. serán para el mismo paciente, 2. pueden estar en el mismo marco de tiempo (p.e. mismo día), 3. probablemente tendrán el mismo workflowId, 4. puede ser que el médico responsable del registro sea el mismo.
 
 
-== Subclases de Entry ==
+== Subclases de ENTRY==
 
-Las subclases de Entry son básicamente contenedores de estructuras (ItemStructure y History) de datos clínicos. Más allá de los atributos de Entry antes mencionados, todo el nivel de estructuras se considera como "clases estructurales" que pueden ser derivadas desde el arquetipo, y por lo tanto, no se necesita persistencia explícita para esas clases.
+Las subclases de ENTRY son básicamente contenedores de estructuras (ItemStructure y History) de datos clínicos. Más allá de los atributos de Entry antes mencionados, todo el nivel de estructuras se considera como "clases estructurales" que pueden ser derivadas desde el arquetipo, y por lo tanto, no se necesita persistencia explícita para esas clases.
+
+===ADMIN_ENTRY===
+
+Aparte de los campos heredados de ENTRY, ADMIN_ENTRY solo contiene una estructura, por lo que si los campos de ENTRY son modelados en el modelo de datos mínimo, la clase ADMIN_ENTRY no necesita estar presente, solamente se necesita su estructura interna.
+
+===CARE_ENTRY===
 
 Hay dos campos en la subclase CARE_ENTRY para especificar un protocolo (protocol) y un identificador de guía (guideline_id), que en conjunto con ENTRY.workflow_id, permiten dar el contexto del proceso ejecutado.
   * El campo "protocol" indica cómo llega la información a la entrada. Para entradas INSTRUCTION, indica cómo se debe ejecutar la instrucción/orden. Este protocolo puede ser derivado de una guía clínica.
   * El campo "guideline_id", opcionalmente, permite referenciar a la guía de la cual se derivó el "protocol".
 
 El protocolo es una estructura arquetipable. _Entiendo que en el arquetipo se especifica un protocolo general, y que en el registro clínico, el médico/enfermera/técnico especifica cómo fue ejecutado ese protocolo. Por ejemplo, el protocolo para tomar la presión, puede indicar que el paciente debe estar acostado, sentado o parado, y en la ejecución se registra una de esas posiciones._ Si esto es cierto, el protocolo es parte del contenido clínico y debería estar en el modelo de información mínimo. De todas formas, es una estructura opcional, por lo que podría modelarse aparte y relacionarse de alguna forma con el modelo mínimo.
+
+
+===Subclases de CARE_ENTRY===
+
+Todas las subclases contienen, de forma directa o indirecta, estructuras de datos. Por otra parte, algunas contienen datos simples, como:
+  * INSTRUCTION.narrative: DV_TEXT
+  * INSTRUCTION.expirity_time: DV_DATE_TIME
+  * INSTRUCTION.wf_definition: DV_PARSABLE
+  * INSTRUCTION.activities: Collection<ACTIVITY>
+    * description: ITEM_STRUCTURE
+    * timing: DV_PARSABLE
+    * action_archetype_id: String
+  * ACTION.time: DV_DATE_TIME
+  * ACTION.instruction_details: INSTRUCTION_DETAILS
+    * instruction_id: LOCATABLE_REF
+    * activity_id: String
+    * wf_details: ITEM_STRUCTURE
+  * ACTION.ism_transition: ISM_TRANSITION
+    * current_state: DV_CODED_TEXT
+    * transition: DV_CODED_TEXT
+    * careflow_step: DV_CODED_TEXT
+
+El problema que se presenta es cómo representar la colección de actividades de INSTRUCTION, y cómo se representa la transición y los detalles de la instrucción de ACTION.
