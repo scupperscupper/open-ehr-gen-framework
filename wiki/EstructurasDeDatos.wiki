@@ -118,6 +118,7 @@ El protocolo es una estructura arquetipable. _Entiendo que en el arquetipo se es
 ===Subclases de CARE_ENTRY===
 
 Todas las subclases contienen, de forma directa o indirecta, estructuras de datos. Por otra parte, algunas contienen datos simples, como:
+{{{
   * INSTRUCTION.narrative: DV_TEXT
   * INSTRUCTION.expirity_time: DV_DATE_TIME
   * INSTRUCTION.wf_definition: DV_PARSABLE
@@ -125,6 +126,7 @@ Todas las subclases contienen, de forma directa o indirecta, estructuras de dato
     * description: ITEM_STRUCTURE
     * timing: DV_PARSABLE
     * action_archetype_id: String
+
   * ACTION.time: DV_DATE_TIME
   * ACTION.instruction_details: INSTRUCTION_DETAILS
     * instruction_id: LOCATABLE_REF
@@ -134,5 +136,6 @@ Todas las subclases contienen, de forma directa o indirecta, estructuras de dato
     * current_state: DV_CODED_TEXT
     * transition: DV_CODED_TEXT
     * careflow_step: DV_CODED_TEXT
+}}}
 
 El problema que se presenta es cómo representar la colección de actividades de INSTRUCTION, y cómo se representa la transición y los detalles de la instrucción de ACTION.
