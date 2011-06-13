@@ -101,3 +101,9 @@ El campo otherParticipations es como un comodín para especificar otros actores 
 == Subclases de Entry ==
 
 Las subclases de Entry son básicamente contenedores de estructuras (ItemStructure y History) de datos clínicos. Más allá de los atributos de Entry antes mencionados, todo el nivel de estructuras se considera como "clases estructurales" que pueden ser derivadas desde el arquetipo, y por lo tanto, no se necesita persistencia explícita para esas clases.
+
+Hay dos campos en la subclase CARE_ENTRY para especificar un protocolo (protocol) y un identificador de guía (guideline_id), que en conjunto con ENTRY.workflow_id, permiten dar el contexto del proceso ejecutado.
+  * El campo "protocol" indica cómo llega la información a la entrada. Para entradas INSTRUCTION, indica cómo se debe ejecutar la instrucción/orden. Este protocolo puede ser derivado de una guía clínica.
+  * El campo "guideline_id", opcionalmente, permite referenciar a la guía de la cual se derivó el "protocol".
+
+El protocolo es una estructura arquetipable. _Entiendo que en el arquetipo se especifica un protocolo general, y que en el registro clínico, el médico/enfermera/técnico especifica cómo fue ejecutado ese protocolo. Por ejemplo, el protocolo para tomar la presión, puede indicar que el paciente debe estar acostado, sentado o parado, y en la ejecución se registra una de esas posiciones._ Si esto es cierto, el protocolo es parte del contenido clínico y debería estar en el modelo de información mínimo. De todas formas, es una estructura opcional, por lo que podría modelarse aparte y relacionarse de alguna forma con el modelo mínimo.
