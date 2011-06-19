@@ -19,14 +19,52 @@ Un modelo plano que permita reconstruir una estructura del RM, debería tener po
   * Archetype ID (define el tipo del RM: Observation, Action, Composition, etc)
   * Path
 
-Se debe notar que para nodos hoja estructurados (como DvQuantity(magnitude,unit)) que además son multivaluados, se tendrán varias Paths para el mismo nodo (una para magnitude y otra para unit), y además se tendrán Paths repetidas por ser multivaluado. El problema a resolver es, en caso de tener 2 instancias del nodo, como indicar que par de Paths corresponden a una instancia del nodo y que par de Paths a la otra instancia. Esto se puede resolver agregando un atributo:
-  * Instance Node ID (para diferenciar entre instancias "gemelas").
+Se debe notar que para nodos hoja estructurados (como DvQuantity(magnitude,units)) que además son multivaluados, se tendrán varias Paths para el mismo nodo (una para magnitude y otra para units), y además se tendrán Paths repetidas por ser multivaluado. El problema a resolver es, en caso de tener 2 instancias del nodo, como indicar que par de Paths corresponden a una instancia del nodo y que par de Paths a la otra instancia. Esto se puede resolver agregando un atributo:
+  * Instance Node ID (para diferenciar entre nodos hermanos, es decir que tienen la misma path).
 
-De la misma manera que se pueden tener instancias "gemelas" se pueden tener "primos gemelos", es decir que el nodo padre de un nodo hoja pueda ser múltiple, entonces tengo que saber "cuál es mi padre", y diferenciarlo de mi "tío" (gemelo de mi padre), para esto tendría un atributo:
+Entonces, para un contenedor C de múltiples instancias de un nodo con path P y tipo DvQuantity, se tendrían las siguientes paths:
+
+  * P[0]/units
+  * P[0]/magnitude
+  * P[1]/units
+  * P[1]/magnitude
+
+Donde 0 y 1 son los identificadores de instancia de cada DvQuantity contenido en C.
+
+*A tener en cuenta*
+Si se consideran los identificadores de instancia, las rutas del RM no serían iguales que las rutas del AOM, porque en los arquetipos no hay instancias.
+Por otro lado, removiendo los identificadores de instancia, las rutas de nodos hermanos quedarían iguales entre sí, y iguales a las rutas en los arquetipos:
+
+  * P/units
+  * P/magnitude
+
+
+También se pueden tener nodos "primos", es decir que el nodo padre de un nodo hoja pueda ser múltiple, entonces tengo que saber "cuál es mi padre", y diferenciarlo de mi "tío" (gemelo de mi padre), para esto tendría un atributo:
   * Parent ID
+
+Este caso sería similar al anterior, solo que el contenedor C es el que puede ser múltiple. Si PC es la path a C, y C solo puede contener un DvQuantity en su campo "value", se tendría:
+
+  * PC[0]/value/units
+  * PC[0]/value/magnitude
+  * PC[1]/value/units
+  * PC[1]/value/magnitude
+
+En todo momento, cada "value" de tipo DvQuantity, debe saber a que instancia del contenedor C pertenece, si a la que tiene identificador de instancia 0 o 1.
+
+Aquí también pasa que si se quitan los identificadores de instancia, las paths para los nodos hermanos son iguales (y para todos sus hijos, o sea los nodos primos). Y éstas además quedan iguales a las paths definidas en el arquetipo.
+
 
 Luego, si quisiera todas las instancias de los nodos generados para un determinado arquetipo, debería poder diferenciar estructuras enteras. Todos las instancias de nodos de una misma estructura, deberían tener una misma referencia. Para esto se tendría un atributo:
   * Structure ID
+
+Si se tuviera otra estructura donde estuvieran todos los atributos útiles para el filtrado y la búsqueda e registros, indizados por este Structure ID, se podrían cargar desde datos complejos (documentos), hasta datos simples (elementos) filtrando o buscando. Algunos de los campos de búsqueda y filtrado se muestran más abajo, pero en resumen serían:
+  * Datos del paciente (nombre, edad, sexo, identificadores, etc)
+  * Datos del responsable de la atención (nombre, edad, sexo, identificadores, etc)
+  * Datos del autor del registro (nombre, edad, sexo, identificadores, etc)
+  * Datos temporales: apertura y cierre del registro
+  * Datos del lugar físico/servicio: hospital, departamento, punto de atención
+  * Metadatos como tags
+
 
 Debido a que un mismo arquetipo puede ser utilizado en distintos templates de distintas formas, también debería saber que template se usó para una estructura, así que cada nodo tendría un campo:
   * Template ID
