@@ -7,7 +7,7 @@
 
 ==Modelo de información==
 
-El modelo de información de openEHR es esencialmente jerárquico con una estructura de árbol de varios niveles. Esta estructura lo hace poco óptimo para realizar búsquedas, y complejiza tanto el data binding como la generación de GUI con datos de estas estructuras.
+El modelo de información de openEHR es esencialmente jerárquico con una estructura de árbol de varios niveles. Esta estructura lo hace poco óptimo para realizar búsquedas, y complejiza el proceso de data binding, la persistencia (estructuras en BD relacional), y la generación de GUI con datos de estas estructuras.
 
 La idea para optimizar este modelo es aplanarlo, conservando la estructura de árbol codificada (de forma que pueda ser construido un árbol real en cualquier momento a partir de datos planos. Para codificar la estructura de árbol se podrían usar las paths de los arquetipos openEHR que se deben guardar en el modelo de información, así teniendo el identificador del arquetipo y una path, se sabrá exactamente que lugar en el árbol ocupa cierto elemento.
 
