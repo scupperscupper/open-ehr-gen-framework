@@ -23,31 +23,33 @@ Se debe notar que para nodos hoja estructurados (como DvQuantity(magnitude,units
   * Instance Node ID (para diferenciar entre nodos hermanos, es decir que tienen la misma path).
 
 Entonces, para un contenedor C de múltiples instancias de un nodo con path P y tipo DvQuantity, se tendrían las siguientes paths:
-
+{{{
   * P[0]/units
   * P[0]/magnitude
   * P[1]/units
   * P[1]/magnitude
+}}}
 
 Donde 0 y 1 son los identificadores de instancia de cada DvQuantity contenido en C.
 
 *A tener en cuenta*
 Si se consideran los identificadores de instancia, las rutas del RM no serían iguales que las rutas del AOM, porque en los arquetipos no hay instancias.
 Por otro lado, removiendo los identificadores de instancia, las rutas de nodos hermanos quedarían iguales entre sí, y iguales a las rutas en los arquetipos:
-
+{{{
   * P/units
   * P/magnitude
-
+}}}
 
 También se pueden tener nodos "primos", es decir que el nodo padre de un nodo hoja pueda ser múltiple, entonces tengo que saber "cuál es mi padre", y diferenciarlo de mi "tío" (gemelo de mi padre), para esto tendría un atributo:
   * Parent ID
 
 Este caso sería similar al anterior, solo que el contenedor C es el que puede ser múltiple. Si PC es la path a C, y C solo puede contener un DvQuantity en su campo "value", se tendría:
-
+{{{
   * PC[0]/value/units
   * PC[0]/value/magnitude
   * PC[1]/value/units
   * PC[1]/value/magnitude
+}}}
 
 En todo momento, cada "value" de tipo DvQuantity, debe saber a que instancia del contenedor C pertenece, si a la que tiene identificador de instancia 0 o 1.
 
