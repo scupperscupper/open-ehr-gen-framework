@@ -8,7 +8,7 @@ Te cuento como está hecha ahora la integración con el sistema de pacientes med
   # El punto central es el método sendMessageToPDQServiceSOAP, donde se hace la llamada SOAP al servicio de búsqueda de datos demográficos (PDQ).
   # Para llamar al servicio, no se necesita ninguna librería extra como el Groovy WSClient, que tiene algunos problemas. Incluso en el código se ven algunos comentarios informando de estos problemas.
   # La llamada al Web Service se hace en la línea: def pdqResponse = svc.getOpenSIH_0020_0020Prototipo_0020WebService_0020PublisherPort().consultaPaciente(request)
-  # El código que implementa la llamada está en: http://code.google.com/p/open-ehr-gen-framework/source/browse/#svn%2Ftrunk%2Fopen-ehr-gen%2Fsrc%2Fjava%2Forg%2Fopensih%2Fwebservices
+  # El código que implementa la llamada está [http://code.google.com/p/open-ehr-gen-framework/source/browse/#svn%2Ftrunk%2Fopen-ehr-gen%2Fsrc%2Fjava%2Forg%2Fopensih%2Fwebservices aquí]
   # Ese código es un proxy (intermediario) generado a partir del WSDL que define los servicios web que puedo invocar.
   # La generación del proxy a partir del WSDL, se puede hacer con la herramienta [http://cxf.apache.org/ Apache CXF], que tiene un comando para ello.
   # Colocar el código Java generado por Apache CXF en "src/java", borrando el código que hay en "src/java/org".
