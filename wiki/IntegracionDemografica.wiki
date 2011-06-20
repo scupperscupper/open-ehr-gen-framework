@@ -1,3 +1,16 @@
 #summary Información sobre cómo integrar OpenEHR-Gen con un sistema de información demográfica (de pacientes) en cualquier institución prestadora de servicios de salud.
+#labels Featured,Phase-Support
 
-TODO
+Te cuento como está hecha ahora la integración con el sistema de pacientes mediante IHE PDQ, y cuales son las ideas atrás:
+
+  # La clase que hay que modificar para integrar servicios demográficos externos es [http://code.google.com/p/open-ehr-gen-framework/source/browse/trunk/open-ehr-gen/src/groovy/demographic/PixPdqDemographicAccess.groovy PixPdqDemographicAccess.groovy]
+  # En esa clase es donde se implementa la llamada a los Web Services de IHE PIX/PDQ especificados aquí: [http://www.ihe.net/Technical_Framework/upload/IHE_ITI_Suppl_PIX_PDQ_HL7v3_Rev2-1_TI_2010-08-10.pdf IHE PIX-PDQ]
+  # El punto central es el método sendMessageToPDQServiceSOAP, donde se hace la llamada SOAP al servicio de búsqueda de datos demográficos (PDQ).
+  # Para llamar al servicio, no se necesita ninguna librería extra como el Groovy WSClient, que tiene algunos problemas. Incluso en el código se ven algunos comentarios informando de estos problemas.
+  # La llamada al Web Service se hace en la línea: def pdqResponse = svc.getOpenSIH_0020_0020Prototipo_0020WebService_0020PublisherPort().consultaPaciente(request)
+  # El código que implementa la llamada está en: http://code.google.com/p/open-ehr-gen-framework/source/browse/#svn%2Ftrunk%2Fopen-ehr-gen%2Fsrc%2Fjava%2Forg%2Fopensih%2Fwebservices
+  # Ese código es un proxy (intermediario) generado a partir del WSDL que define los servicios web que puedo invocar.
+  # La generación del proxy a partir del WSDL, se puede hacer con la herramienta [http://cxf.apache.org/ Apache CXF], que tiene un comando para ello.
+  # Colocar el código Java generado por Apache CXF en "src/java", borrando el código que hay en "src/java/org".
+  # Modificar la llamada al servicio en el punto 5, para llamar al nuevo proxy.
+  # Verificar que los formatos de los mensajes con correctos para su debido procesamiento.
