@@ -120,6 +120,11 @@ Entonces la lista debería tener cardinalidad mínima 2, y lanzar un error si ti
 En lugar de regenerar la GUI cada vez, ya que se genera en base a recorrer el árbol definido en el arquetipo, se podría:
 
   * Cachear GUIs: guardar el HTML generado y mostrar ese (p.e. si estoy editando, debería tener un mecanismo de cargarle datos a ese HTML estático, p.e. con JS).
+    * Cachear GUIs para el ingreso de datos.
+      * Cuando el sistema arranca, se cachearían todas las interfaces para el ingreso de datos, luego se bajan las que se utilizan menos, y se dan de alta de nuevo en el caché cuando son utilizadas.
+    * Cachear GUIs para mostrar datos ingresados.
+      * Una vez que se ingresa un registro, la visualización de dicho registro se debería cachear, para que las visualizaciones posteriores sean más rápidas.
+      * Se tendría un conjunto de reglas para saber cuando dar de alta o baja la GUI del caché, por ejemplo si hace mucho tiempo que no se visualiza, se dará de baja, y si el paciente tiene una cita mañana, hoy se comienza el caching de sus registos pasados para visualización.
   * Generar la GUI en base a una estructura plana derivada del arquetipo, es decir, transformar el arquetipo original estructurado en uno plano para su uso directo. Este tipo de arquetipo plano también serviría para obtener las restricciones directamente de validación para cada nodo hoja (se menciona en el punto anterior).
 
 
