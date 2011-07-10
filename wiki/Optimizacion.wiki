@@ -128,6 +128,11 @@ En lugar de regenerar la GUI cada vez, ya que se genera en base a recorrer el á
   * Generar la GUI en base a una estructura plana derivada del arquetipo, es decir, transformar el arquetipo original estructurado en uno plano para su uso directo. Este tipo de arquetipo plano también serviría para obtener las restricciones directamente de validación para cada nodo hoja (se menciona en el punto anterior).
 
 
+*Estoy recibiendo altos tiempos de ejecución en el GUIGen del show*
+
+Esto puede pasar porque carga los templates de disco y son muchos templates con poco código. Tal vez en lugar de hacerlo tan recursivo como ahora, lo mejor sería hacer grandes templates p.e. uno por cada tipo de entry a mostrar.
+
+
 =Caching para visualización de registros clínicos=
 
 Por su naturaleza, los registros clínicos son utilizados más en modo "solo lectura", por su naturaleza documental/histórica. Por lo tanto, puede servir concentrarse en acelerar la parte de visualización de registros.
