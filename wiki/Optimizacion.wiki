@@ -13,6 +13,8 @@ La idea para optimizar este modelo es aplanarlo, conservando la estructura de á
 
 ===Ideas para un modelo plano útil para implementar consultas EQL:===
 
+Esta discusión deja claros varios puntos de implementación respecto a AQL/EQL: http://old.nabble.com/AQL-parser-in-Java--%2B-AQL-response-format-%28using-the-AS-operator%29-td19738736.html
+
 El modelo plano puede servir para sustituir al estructurado (se podría elegir usar uno u otro), o también como índice del modelo estructurado, que se crea cuando el registro ya está cerrado (esto evita tener que cambiar GUIGen y DataBinder, y también permite hacer consultas, pero siguen habiendo problemas de performance en el binder para estructuras grandes).
 
 Un modelo plano que permita reconstruir una estructura del RM, debería tener por lo menos los cambios:
@@ -77,9 +79,10 @@ Si quisiera todas las estructuras para un determinado paciente, y además tener 
   * Party ID
 
 Como siempre se necesitan hacer consultas por fecha, agregaría dos períodos, uno para indicar cuando se llevó a cabo el acto, y otro para indicar cuando se hizo el registro del acto, la HCE le dará los valores correctos a estos campos según la semántica definida, por ejemplo si las dos fechas de cuando se hizo el acto coinciden, indica un acto puntual.
-  * effective time (Interval&lt;DateTime&gt;)
-  * record time (Interval&lt;DateTime&gt;)
-
+{{{
+  * effective time (Interval<DateTime>)
+  * record time (Interval<DateTime>)
+}}}
 
 El resto de la información es propia de los datatypes del modelo y de las estructuras de datos (Cluser, Element, List, Table, etc). Se podría tener un registro genérico con los campos descritos arriba (como metadata para queries), y registros particulares para los distintos tipos de datos del RM (pero con un modelo plano basado en FKs).
 
@@ -100,7 +103,6 @@ Para hacer el análisis, es necesario analizar estructuras completas, identifica
 En última instancia, una estructura completa podría ser modelada mediante arquetipos, modelo persistente mínimo y metadatos (implementados dentro o fuera del modelo persistente, pero que no forman parte del modelo en sí, si no que son de uso exclusivo para la reconstrucción de estructuras).
 
 Relevamiento de datos útiles y donde van en las estructuras del modelo de información: http://code.google.com/p/open-ehr-gen-framework/wiki/EstructurasDeDatos
-
 
 
 ==Data Binding==
