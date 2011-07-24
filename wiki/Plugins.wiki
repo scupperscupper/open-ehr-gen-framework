@@ -32,6 +32,7 @@ API para conexión de plugins:
   * Verticales (incluyen varios de los anteriores)
     * CPOE: Prescripción de medicamentos
       * Integración con Vademecum local
+      * Ver RxNorm de EEUU: http://www.nlm.nih.gov/research/umls/rxnorm/
       * Soporte para codificaciones locales
       * Mapeo a codificaciones internacionales
       * Control completo de la prescripción (períodos de tiempo, cantidades, dosis, repeticiones, etc)
