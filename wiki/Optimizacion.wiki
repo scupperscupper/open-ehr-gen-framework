@@ -11,6 +11,84 @@ El modelo de información de openEHR es esencialmente jerárquico con una estruc
 
 La idea para optimizar este modelo es aplanarlo, conservando la estructura de árbol codificada (de forma que pueda ser construido un árbol real en cualquier momento a partir de datos planos. Para codificar la estructura de árbol se podrían usar las paths de los arquetipos openEHR que se deben guardar en el modelo de información, así teniendo el identificador del arquetipo y una path, se sabrá exactamente que lugar en el árbol ocupa cierto elemento.
 
+===Sobre datos mínimos a almacenar===
+
+Los únicos datos que son necesarios almacenar para cumplir con los requerimientos de registro de los médicos, son los datos que ingresan en cada formulario, más algún dato de contexto como la fecha en que se ingresan los datos.
+
+Por lo tanto, hacer el proceso de databinding en el momento que el usuario está ingresando datos es innecesario, porque no agrega valor a la información ingresada y demora entre 1 seg y 3 segs el proceso de binding, validación y almacenado de los datos en la base. Y luego mostrar los datos ingresados, demora entre 3 y 8 segs, dependiendo de la cantidad de datos y la cantidad de arquetipos referenciados desde el template.
+
+La tarea que no puede evitarse es la de validar los datos ingresados, contra las restricciones presentes en los arquetipos y el template. Pero no sería necesario hacer el binding y el guardado en el momento del submit de información del médico.
+
+Entonces los requerimientos básicos serían:
+  * Generación del formulario de ingreso en base a metadatos.
+  * Ingreso y validación de datos contra restricciones definidas en metadatos.
+  * Generación de pantalla de edición con errores a corregir, en base a metadatos, datos ingresados y errores de validación detectados.
+  * Generación de pantalla de visualización de datos ingresados correctamente, en base a metadatos y datos ingresados.
+  * Capacidad de hacer búsquedas de datos por arquetipo y paths, restringidos por paciente, rango de fechas y dominio.
+  * Capacidad de generar XMLs de COMPOSITIONS y EHR_EXTRACTS (según RM de openEHR).
+
+
+====Generación de formularios de ingreso====
+
+  * Los metadatos deben ser completos: 1 solo template desde donde cuelgan todos los arquetipos necesarios, sin slots o internal refs (se resuelven todas las referencias antes de usar la estructura). Este es el proceso de Flattening o aplanamiento de la estructura, y debería resolverse y cachearse en tiempo de arranque, no en tiempo de ejecución.
+  * Sobre ese template se deberían aplicar todas las restricciones de GUI necesarias para generar la vista (GUITemplate). Estas restricciones no se deberían aplicar en tiempo de ejecución, sino que se deberían calcular y aplicar en tiempo de arranque.
+  * En base a lo anterior, deberían generarse y cachearse todos los formularios de ingreso de información, también en tiempo de arranque.
+    * Debería haber un gestor del caché de vistas que permita regenerar las vistas y re-cachearlas sin necesidad de reiniciar la aplicación.
+    * Cada vista debe referenciar al identificador del GUITemplate y la versión de ese GUITemplate. El GUITemplate tiene adentro contra qué template se aplica, con la versión a dicho template. Luego el template tiene referencias a todos los arquetipos que usa, con sus respectivas versiones.
+  * Mostrar un formulario de ingreso de información luego de todo este proceso, debería hacerse en menos de un segundo.
+
+  * Analizar la posibilidad de que la vista tenga una representación como un XForm, con un modelo XML asociado que sea el propio RM en XML.
+
+
+====Ingreso y validación de datos====
+
+  * En el mismo proceso que se generan las estructuras de metadatos completas para generar la vista de ingreso de datos, se deberían extraer las restricciones que aplican a cada nodo del RM.
+  * La idea es que cada dato ingresado tendrá un arquetipo y una path asociada, y el objetivo es obtener las restricciones que aplican para cada dato ingresado.
+    * Entonces la path del dato ingresado tendrá un conjunto de restricciones con las que debe cumplir.
+    * Las restricciones pueden ser del propio nodo del arquetipo al que hace referencia cada dato (mediante su path), o a restricciones de los nodos ancestros (identificados por subpaths de la path de cada dato).
+    * Las restricciones de los nodos ancestros, en general serán de ocurrencia y cardinalidad:
+      * Un nodo debe ocurrir como mínimo X veces (0: opcional, 1: obligatorio, N>1: obligatorio múltiple)
+      * Un nodo debe ocurrir como máximo Y veces (0: eliminado, 1: ocurrencia unitaria, N>1: múltiple acotada, *: múltiple no acotada)
+      * Un atributo de tipo colección de un nodo debe tener cardinalidad mínima X (0: vacío, 1: requerido mínimo, N>1: requeridos múltiples)
+      * Un atributo de tipo colección de un nodo debe tener cardinalidad máxima Y (0: sin hijos, 1: colección unitaria, N>1: colección múltiple acotada, *: colección múltiple no acotada).
+    * Las restricciones de los nodos hoja, que serían los nodos padres inmediatos de las paths de los datos ingresados, pueden:
+      * Tener restricciones sobre los valores de los datos ingresados (por ejemplo cumplir con rangos o que el valor debe estar en una lista de valores).
+      * Tener restricciones propias del RM:
+        * Opcionalidad y obligatoriedad de ciertos atributos (p.e. si un element, no tiene value, setear nullflavor).
+        * Tipos estructurados: nodos del RM que tienen más de un atributo, y que se completan con varios datos que ingresa el usuario, o sea que para un mismo nodo se tienen varios valores y paths (p.e. para DvQuantity se necesita magnitude y units).
+        * Se cumplen todas las restricciones del propio RM (como que todo element debe tener value o nullflavor, y que tenga value quiere decir que todos los valores para crear el DataValue fueron ingresados por el usuario).
+
+  * El procedimiento de verificación podría ser:
+    * Como entrada tengo un mapping de path->dato (posiblemente con múltiples ocurrencias de dato para la misma path).
+    * Por la path del dato, pido las restricciones que aplican.
+    * Las restricciones sobre valores, son verificables de forma directa.
+    * Las restricciones sobre completitud de datos estructurados, pueden requerir lookup sobre el mapping de datos, para obtener los demás valores necesarios para verificar las restricciones (ver que no genero el nodo del RM, solo verifico restricciones).
+    * Las restricciones sobre ocurrencias deben ser verificadas sin tomar las paths de los datos que vienen porque un valor puede no venir y ser de un nodo obligatorio:
+      * Si un nodo ancestro es obligatorio y no viene ningún valor para él, o si no vienen todos los valores necesarios para crear sus nodos descendientes, se debe reportar el error.
+      * El caso general del anterior es cuando la ocurrencia mínima es un número mayor que uno, se debe hacer una verificación similar, solo que para múltiples nodos.
+      * Si un nodo ancestro es eliminado, hay que verificar que no venga un valor para él o sus descendientes.
+    * Las restricciones sobre multiplicidad de colecciones, se deben verificar sobre la cantidad de nodos hijos que se crearían si hubiera binding.
+      * Esto sería mucho más fácil si se hiciera el binding porque es simplemente ver cuantos hijos generé y ver si hay más o menos de los que esperaba para la colección.
+      * Como no se va a hacer el binding, en el momento que se hacen las verificaciones anteriores, se debería ir contando cuantos nodos de cada tipo crearía si hiciera binding, para cada nodo con atributos de tipo colección.
+      * En realidad esto es un pseudo binding, porque tengo que ver para cada path del arquetipo, desde la raíz, todos los atributos múltiples (p.e. observation.data.events, itemtree.items, cluster.items, etc) cuántas paths de datos que me vienen hay para cada uno, y de esas, contar solo las paths que generarían nodos hijos distintos (p.e. pueden haber 2 paths para obs.data.events, pero las 2 ser para un mismo element que va a tener a un solo event como ancestro).
+        * Todas las rutas de atributos de tipo colección pueden estar precalculados, para saber qué verificar para cada arquetipo.
+          * Se puede saber entonces si para un determinado atributo de tipo colección tiene una cardinalidad > 0, y es ahí donde tengo que verificar la restricción, si no se da ese caso, no es necesaria la verificación.
+        * Se puede hacer un servicio que haga binding temporal solo con el objeto de unir paths para los mismos nodos y detectar realmente cuantas paths para distintos nodos hay, o sea, cuantos nodos distintos hay.
+        * Otra alternativa es no darle importancia a la validación de cardinalidad y no validar. En general esto va a andar bien si no se van a requerir cardinalidades obligatorias a nivel de arquetipos, si hubiera algún arquetipo con un atributo de cardinalidad > 0, habría que resolverlo de alguna forma.
+
+
+
+
+
+
+
+
+====Generación de pantalla de edición====
+====Generación de pantalla de visualización====
+====Capacidad de hacer búsquedas====
+====Capacidad de generar XMLs del RM====
+
+
 ===Ideas para un modelo plano útil para implementar consultas EQL:===
 
 Esta discusión deja claros varios puntos de implementación respecto a AQL/EQL: http://old.nabble.com/AQL-parser-in-Java--%2B-AQL-response-format-%28using-the-AS-operator%29-td19738736.html
