@@ -1,0 +1,22 @@
+#summary Describe herramientas útiles para crear paquetes de ejecución independientes (todo incluido)
+#labels Phase-Implementation,Featured
+
+
+La idea de trabajar con paquetes de ejecución independientes es útil para:
+  * Hacer demos fácilmente sin necesidad de instalar varios paquetes de software.
+  * Hacer la descarga y prueba del sistema más sencilla, sobre todo para aquellas personas no informáticos (médicos, etc).
+
+
+= Winstone =
+
+http://winstone.sourceforge.net/
+
+
+= Grails Standalone plugin =
+
+http://grails-plugins.github.com/grails-standalone/
+
+
+= Grails Jetty Standalone =
+
+http://grails.org/plugin/jetty-standalone
