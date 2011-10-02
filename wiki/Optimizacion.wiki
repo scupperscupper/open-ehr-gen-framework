@@ -1,5 +1,5 @@
 #summary Aquí pondremos ideas para optimizar el sistema y mejorar la performance
-#labels Featured,Phase-Design
+#labels Featured,Phase-Design,Phase-Requirements
 
 <wiki:toc max_depth="3" />
 
@@ -224,3 +224,12 @@ El tamaño de este caché podría ser configurable (para adaptarlo a la infraest
 Incluso, no solo las estructuras de datos podrían cachearse, sino que podrían cachearse las vistas, que también serían estáticas debido a que los datos son estáticos. Incluso, otras opciones serían generar CDAs, o PDFs, y cachear eso en lugar de la estructura de datos (u otra opción útil para mostrar datos, y que utilice la menor memoria posible, p.e. un string JSON).
 
 En el caso del string JSON, se podría hacer un GuiGen Javascript, que funcione del lado del usuario, por lo que se disminuye la carga en servidor, y ser aceleran los tiempos de render. En este caso, tal vez se necesitaría también una representación JSON de los arquetipos y templates involucrados.
+
+
+= Compresion de respuestas del servidor =
+
+Existen algunos plugins de Grails que permiten que las respuestas del servidor sea comprimidas:
+
+  * http://www.grails.org/plugin/ui-performance
+  * http://refactor.com.au/blog/grails-ui-performance-plugin-beware-uiperformancehtmlcompress
+  * http://jira.grails.org/browse/GRAILS-4183
