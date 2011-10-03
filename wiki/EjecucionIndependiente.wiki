@@ -20,3 +20,9 @@ http://grails-plugins.github.com/grails-standalone/
 = Grails Jetty Standalone =
 
 http://grails.org/plugin/jetty-standalone
+
+
+= Notas sobre configuración para correr la aplicación en Tomcat =
+
+  * http://monocaffe.blogspot.com/2011/09/grails-and-tomcat-7-datasource.html
+  * http://www.grails.org/plugin/tomcat
