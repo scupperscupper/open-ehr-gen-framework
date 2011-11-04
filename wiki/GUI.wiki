@@ -1,20 +1,22 @@
 #summary En esta pagina se muestran algunos ejemplos de las interfaces de usuario generadas por el framework
-#labels gui,Featured
+#labels gui,Featured,Phase-Design
 
 = Ejemplos de interfaces de usuario generadas por el framework =
 
 == Evaluación primaria: vía aérea ==
 
-https://docs.google.com/uc?id=0B27lX-sxkymfNGQ5MmU5ZjctMGU3ZC00ODdjLWE0ZWMtNDQ4MmQxMGYzYzRl&hl=en&nonsense=img1.jpg
+https://lh6.googleusercontent.com/RkwvGPcEFVPtc-LLH5pDpoj8LpNY7D9BgVh71x_9Pgbmkk1qZOKOlg2Lg0Grq4sjMlD_wvj6bPNfHlcGzPgOuCkAOaTORsnw_h0=w1024&nonsense=ev_via_aerea_sm.jpg
+
+https://lh4.googleusercontent.com/KgGPH6Nr1eCBRuDztXBWtWRMk7b7I362_oLpPzPNJVwoYfRplNOd4DiIuRAAMMikPuiKQd4I8yezCoP2l8P8-SVY9HsrehOgRwY=w1024&nonsense=ev_via_aerea_full.jpg
 
 == Triage de trauma ==
 
-https://docs.google.com/uc?id=0B27lX-sxkymfNmUzZGMyNmMtNzkxMi00ZTdiLWFmNWMtMGFhMWEwYmQ2MTYz&hl=en&nonsense=img2.jpg
+https://lh5.googleusercontent.com/iGdMWI10d7DUr0rfzpSGXkiFiZnwoggGohuEdoqLz3bpSxP4yqkSd89US_Ok_B-Oc14rGSVsjyizAMlBWm5Y8RwpcKv5M7jru5k=w1024&nonsense=triage.jpg
 
 == Solicitud de exámenes de laboratorio ==
 
-https://docs.google.com/uc?id=0B27lX-sxkymfY2IyMzQ3YjMtYzhiMS00Mjk5LTlmODQtODg0NGY3MGI1NTRh&hl=en&nonsense=img3.jpg
+https://lh5.googleusercontent.com/4gxpq83a2xUwlbrygsm3L_z_x4PEHO5kJGWUDXmsO1NVjHabrqgZDc9fCaMhQonbfiwpJOtKCZ_ee4GbKcpbxHpqQoQOj32h7A8=w1024&nonsense=lab.jpg
 
 == Acceso a estudios imagenológicos ==
 
-https://docs.google.com/open?id=0B27lX-sxkymfN2QzYjZlNjItMGRmYy00NTY2LWJmZTItOWMxNmVlMmYwNzVj&nonsense=dicom_integration.jpg
+https://lh3.googleusercontent.com/pv0M1bqUiRkHgn7eUx4qyFWWf_h6-Qry17ALP4nD2PXPGsG0lAIgUhsFANJtgR1Bi7a3zxlYJWkOzlW_6Aa-HPLlwGoixXYOLrY=w1024&nonsense=dicom_integration.jpg
