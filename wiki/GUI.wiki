@@ -17,4 +17,4 @@ https://docs.google.com/uc?id=0B27lX-sxkymfY2IyMzQ3YjMtYzhiMS00Mjk5LTlmODQtODg0N
 
 == Acceso a estudios imagenológicos ==
 
-https://docs.google.com/uc?id=0B27lX-sxkymfN2QzYjZlNjItMGRmYy00NTY2LWJmZTItOWMxNmVlMmYwNzVj&hl=en&nonsense=img4.jpg
+https://docs.google.com/open?id=0B27lX-sxkymfN2QzYjZlNjItMGRmYy00NTY2LWJmZTItOWMxNmVlMmYwNzVj&nonsense=dicom_integration.jpg
