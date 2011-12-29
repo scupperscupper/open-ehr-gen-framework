@@ -3,20 +3,12 @@
 
 = Ejemplos de interfaces de usuario generadas por el framework =
 
-== Evaluación primaria: vía aérea ==
+[https://docs.google.com/open?id=0B27lX-sxkymfNGQ5MmU5ZjctMGU3ZC00ODdjLWE0ZWMtNDQ4MmQxMGYzYzRl Evaluación primaria: vía aérea]
 
-http://lh3.googleusercontent.com/bF2zAdStODdpB4At_hruupFJwn_S4tO-8vEWOd9g5DO9l3xh9-82jdSlyXL_dKWCFYMBU-TWqUXjpC6kvIJMgKlkTUvg6JPHFNs=w1024?nonsense=ev_via_aerea_sm.jpg
+[https://docs.google.com/open?id=0B27lX-sxkymfZWJhYWNiMWEtZDUyNy00NTBiLWE2MWItM2Y3OTI3ZjJkYmE0 Evaluación primaria: vía aérea 2]
 
-http://lh4.googleusercontent.com/KgGPH6Nr1eCBRuDztXBWtWRMk7b7I362_oLpPzPNJVwoYfRplNOd4DiIuRAAMMikPuiKQd4I8yezCoP2l8P8-SVY9HsrehOgRwY=w1024?nonsense=ev_via_aerea_full.jpg
+[https://docs.google.com/open?id=0B27lX-sxkymfNmUzZGMyNmMtNzkxMi00ZTdiLWFmNWMtMGFhMWEwYmQ2MTYz Triage de trauma]
 
-== Triage de trauma ==
+[https://docs.google.com/open?id=0B27lX-sxkymfY2IyMzQ3YjMtYzhiMS00Mjk5LTlmODQtODg0NGY3MGI1NTRh Solicitud de exámenes de laboratorio]
 
-http://lh5.googleusercontent.com/iGdMWI10d7DUr0rfzpSGXkiFiZnwoggGohuEdoqLz3bpSxP4yqkSd89US_Ok_B-Oc14rGSVsjyizAMlBWm5Y8RwpcKv5M7jru5k=w1024?nonsense=triage.jpg
-
-== Solicitud de exámenes de laboratorio ==
-
-http://lh5.googleusercontent.com/4gxpq83a2xUwlbrygsm3L_z_x4PEHO5kJGWUDXmsO1NVjHabrqgZDc9fCaMhQonbfiwpJOtKCZ_ee4GbKcpbxHpqQoQOj32h7A8=w1024?nonsense=lab.jpg
-
-== Acceso a estudios imagenológicos ==
-
-http://lh3.googleusercontent.com/pv0M1bqUiRkHgn7eUx4qyFWWf_h6-Qry17ALP4nD2PXPGsG0lAIgUhsFANJtgR1Bi7a3zxlYJWkOzlW_6Aa-HPLlwGoixXYOLrY=w1024?nonsense=dicom_integration.jpg
+[https://docs.google.com/open?id=0B27lX-sxkymfN2QzYjZlNjItMGRmYy00NTY2LWJmZTItOWMxNmVlMmYwNzVj Acceso a estudios imagenológicos]
