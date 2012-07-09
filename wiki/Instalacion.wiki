@@ -11,12 +11,16 @@ En esta página se intentara especificar todos los pasos necesarios para instala
 =Requisitos=
 
 Antes de instalar el framework debemos tener:
-  * Java SDK 6 (JDK6): [http://www.oracle.com/technetwork/java/javase/index-137561.html instalación]
+  * Java SDK 6 (JDK6):
+    * [http://www.oracle.com/technetwork/java/javase/index-137561.html instalación página de Oracle (inglés)]
+    * [http://www.rose-hulman.edu/class/csse/resources/JavaDevKit/installation.htm instalación paso a paso (inglés)]
   * Grails Framework 1.3.7: [http://www.grails.org/download/archive/Grails descarga] [http://www.grails.org/Installation instalacion]
     * La versión de Grails DEBE ser la 1.3.7.
-  * Cliente SVN
+  * Cliente SVN (solo para utilizar la versión de desarrollo)
     * Tortoise: http://tortoisesvn.tigris.org/
-    * SVN desde Eclipse (plugin subclipse): http://subclipse.tigris.org/
+    * SVN desde Eclipse (plugin subclipse): http://subclipse.tigris.org
+  * Para no instalar un cliente SVN, puedes bajar la última versión liberada en la página de descargas:
+    * [http://code.google.com/p/open-ehr-gen-framework/downloads/list descargas]
   * MySQL (no es obligatorio tenerlo): [http://www.mysql.com/downloads/mysql/ descarga]
     * Los datos de conexión a la base se configuran en /open-ehr-gen/grails-app/config/Datasource.groovy
 
@@ -86,5 +90,3 @@ http://community.jboss.org/en/jbossas
 
 TODO
 http://jetty.codehaus.org/jetty/
-
-
