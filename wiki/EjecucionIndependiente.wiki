@@ -15,6 +15,8 @@ http://winstone.sourceforge.net/
 = Grails Standalone plugin =
 
 http://grails-plugins.github.com/grails-standalone/
+http://tedwise.com/2012/03/28/getting-the-grails-standalone-plugin-to-work-with-grails-201/
+http://stackoverflow.com/questions/10370711/create-standalone-application-with-grails
 
 
 = Grails Jetty Standalone =
