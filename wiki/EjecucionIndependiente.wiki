@@ -9,19 +9,19 @@ La idea de trabajar con paquetes de ejecución independientes es útil para:
 
 = Winstone =
 
-http://winstone.sourceforge.net/
+  * http://winstone.sourceforge.net/
 
 
 = Grails Standalone plugin =
 
-http://grails-plugins.github.com/grails-standalone/
-http://tedwise.com/2012/03/28/getting-the-grails-standalone-plugin-to-work-with-grails-201/
-http://stackoverflow.com/questions/10370711/create-standalone-application-with-grails
+  * http://grails-plugins.github.com/grails-standalone/
+  * http://tedwise.com/2012/03/28/getting-the-grails-standalone-plugin-to-work-with-grails-201/
+  * http://stackoverflow.com/questions/10370711/create-standalone-application-with-grails
 
 
 = Grails Jetty Standalone =
 
-http://grails.org/plugin/jetty-standalone
+  * http://grails.org/plugin/jetty-standalone
 
 
 = Notas sobre configuración para correr la aplicación en Tomcat =
