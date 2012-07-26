@@ -32,3 +32,9 @@ La idea de trabajar con paquetes de ejecución independientes es útil para:
 
 Esto es interesante para solucionar problemas de permisos en linux:
 http://stackoverflow.com/questions/4412871/grails-deployment-issues-war-tomcat
+
+
+= Instaladores =
+
+Nullsoft Scriptable Install System
+http://nsis.sourceforge.net/Main_Page
