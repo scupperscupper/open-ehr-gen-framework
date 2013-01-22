@@ -29,7 +29,7 @@ Antes de instalar el framework debemos tener:
 ==Auxiliares==
   * Sobre variables de entorno en Windows: http://vlaurie.com/computers2/Articles/environment.htm
   * Sobre variables de entorno en Linux: [https://help.ubuntu.com/community/EnvironmentVariables UBUNTU] [http://www.slackbook.org/html/shell-bash.html#SHELL-BASH-ENVIRONMENT Slackware] [http://www.centos.org/docs/4/4.5/System_Administration_Guide/Default_Settings-Environment_Variables.html CentOS]
-  * Sobre variables de entorno en MaxOS: http://dhptech.com/article/2007/02/09/setting-environment-variables-for-mac-osx-programs
+  * Sobre variables de entorno en MacOS: http://dhptech.com/article/2007/02/09/setting-environment-variables-for-mac-osx-programs
   * Más sobre cómo setear las variables de entorno: http://softimage.wiki.softimage.com/xsidocs/EnvVars_SettingandUsingEnvironmentVariables.htm
 
 
