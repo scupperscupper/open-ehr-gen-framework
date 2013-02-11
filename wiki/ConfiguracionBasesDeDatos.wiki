@@ -5,7 +5,7 @@
 
   # Descargar el driver para Java: http://dev.mysql.com/downloads/connector/j/3.0.html
   # Copiar el jar descargado en ehrgen/lib
-  # Configurar la conexión a la base en ehrgen/grails-app/conf/DataSource.groovy
+  # Configurar la conexión a la base en [https://code.google.com/p/open-ehr-gen-framework/source/browse/trunk/ehrgen/grails-app/conf/DataSource.groovy ehrgen/grails-app/conf/DataSource.groovy]
 
 {{{
 // Configuracion para utilizar MySQL
@@ -37,7 +37,7 @@ max_allowed_packet = 10M
 
   # Descargar el driver para Java: http://jdbc.postgresql.org/download.html
   # Copiar el jar descargado en ehrgen/lib
-  # Configurar la conexión a la base en ehrgen/grails-app/conf/DataSource.groovy
+  # Configurar la conexión a la base en [https://code.google.com/p/open-ehr-gen-framework/source/browse/trunk/ehrgen/grails-app/conf/DataSource.groovy ehrgen/grails-app/conf/DataSource.groovy]
 
 {{{
 driverClassName = "org.postgresql.Driver"
