@@ -3,6 +3,29 @@
 
 = MySQL =
 
+  # Descargar el driver para Java: http://dev.mysql.com/downloads/connector/j/3.0.html
+  # Copiar el jar descargado en ehrgen/lib
+  # Configurar la conexión a la base en ehrgen/grails-app/conf/DataSource.groovy
+
+{{{
+// Configuracion para utilizar MySQL
+// Selecciona la base de datos oehr_dev
+driverClassName = "com.mysql.jdbc.Driver"
+url = "jdbc:mysql://localhost:3306/oehr_dev?useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8"
+username = "root"
+password = "vertrigo"
+
+// Reutilizar conecciones existentes con la base de datos 
+pooled = true
+         
+// create-drop borra la base de datos y la genera de nuevo cada vez que se ejecuta la aplicacion
+// Ver mas opciones en la seccion 3.3: http://grails.org/doc/1.0/guide/3.%20Configuration.html
+dbCreate = "create-drop"
+         
+// Poner en true para loguear consultas SQL
+loggingSql = false
+}}}
+
 Para soportar subir imágenes de más de 1MB, es necesario cambiar la configuración de MySQL (my.ini), de lo contrario, si se desea subir una imagen de más de 1MB se obtendrá una excepción de MySQL. Por ejemplo se puede poner un valor de 10MB:
 
 {{{
@@ -12,7 +35,27 @@ max_allowed_packet = 10M
 
 = Postgres =
 
-TODO
+  # Descargar el driver para Java: http://jdbc.postgresql.org/download.html
+  # Copiar el jar descargado en ehrgen/lib
+  # Configurar la conexión a la base en ehrgen/grails-app/conf/DataSource.groovy
+
+{{{
+driverClassName = "org.postgresql.Driver"
+url = "jdbc:postgresql://localhost:5432/ehrgen"
+username = "postgres"
+password = "postgres"
+dialect = net.sf.hibernate.dialect.PostgreSQLDialect
+
+// Reutilizar conecciones existentes con la base de datos 
+pooled = true
+         
+// create-drop borra la base de datos y la genera de nuevo cada vez que se ejecuta la aplicacion
+// Ver mas opciones en la seccion 3.3: http://grails.org/doc/1.0/guide/3.%20Configuration.html
+dbCreate = "create-drop"
+         
+// Poner en true para loguear consultas SQL
+loggingSql = false
+}}}
 
 
 = SQL Server =
